@@ -570,7 +570,7 @@ How does this compare to the number of contigs found by assembling the long read
 
 - many more.
 
-Does it matter that an assembly is in many contigs? 
+Does it matter that an assembly is in many contigs?
 
 - Yes
 
@@ -584,16 +584,14 @@ Does it matter that an assembly is in many contigs?
 
 How can we get more information about the assembly from Spades?
 
-- Look at the assembly graph <fn>assembly_graph.fastg</fn>, e.g. in the program Bandage. This shows how contigs are related, albeit with ambiguity in some places. 
+- Look at the assembly graph <fn>assembly_graph.fastg</fn>, e.g. in the program Bandage. This shows how contigs are related, albeit with ambiguity in some places.
 
 
+## Comparative genomics
 
-## Next
+Compare genomes: 
 
-### Further analyses 
-
-- Annotate with Prokka.
-- Comparative genomics, e.g. with Roary.
+e.g. with Roary.
 
 ### Links
 
@@ -602,4 +600,3 @@ How can we get more information about the assembly from Spades?
 - Circlator [article](http://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0849-0) and [github repository](http://sanger-pathogens.github.io/circlator/)
 - Pilon [article](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0112963) and [github repository](https://github.com/broadinstitute/pilon/wiki)
 - Notes on [finishing](https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Finishing-Bacterial-Genomes) and [evaluating](https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Evaluating-Assemblies) assemblies.
-

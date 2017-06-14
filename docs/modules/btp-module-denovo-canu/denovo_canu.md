@@ -589,9 +589,18 @@ How can we get more information about the assembly from Spades?
 
 ## Comparative genomics
 
-Compare genomes: 
+Compare genomes:
 
-e.g. with Roary.
+- pacbio pre-pilon
+- pacbio post pilon
+- illumina only
+
+
+Run prokka on the three - how do they differ
+
+Mauve: align the illumina contigs to the polished pacbio contigs.
+
+
 
 ### Links
 

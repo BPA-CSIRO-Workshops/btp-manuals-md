@@ -10,13 +10,13 @@ Tools (and versions) used in this tutorial include:
 
 - canu 1.5 (requires java 1.8)
 - infoseq and sizeseq (part of EMBOSS) 6.6.0.0
-- circlator 1.5.1 
+- circlator 1.5.1
 - bwa 0.7.15
 - samtools 1.3.1
 - makeblastdb and blastn (part of blast) 2.4.0+
 - pilon 1.20
 - spades 3.10.1
-- prokka 1.12
+<!-- - prokka 1.12 -->
 
 ## Learning objectives
 
@@ -36,17 +36,21 @@ Simplified version of workflow:
 
 The files we need are:
 
-- <fn>pacbio.fastq.gz</fn> : the PacBio reads
-- <fn>illumina_R1.fastq.gz</fn>: the Illumina forward reads
-- <fn>illumina_R2.fastq.gz</fn>: the Illumina reverse reads
+- **<fn>pacbio.fastq.gz</fn>** - the PacBio reads
+- **<fn>illumina_R1.fastq.gz</fn>** - the Illumina forward reads
+- **<fn>illumina_R2.fastq.gz</fn>** - the Illumina reverse reads
 
-If you already have the files, skip forward to next section, [Assemble](#assemble).
+<!-- If you already have the files, skip forward to next section, [Assemble](#assemble).
 
 Otherwise, this section has information about how to find and move the files:
 
 ### PacBio files
 
-- Open the command line. <!-- own machine, mGVL or BPA VM -->
+
+- Open the command line.
+
+-- own machine, mGVL or BPA VM --
+
 - Navigate to or create the directory in which you want to work.
 - If the files are already on your server, you can symlink by using
 
@@ -91,7 +95,7 @@ cat pacbio*.fastq | gzip > pacbio.fastq.gz
 mv longfilename_R1.fastq.gz illumina_R1.fastq.gz
 mv longfilename_R2.fastq.gz illumina_R2.fastq.gz
 ```
-
+-->
 ### Sample information
 
 The sample used in this tutorial is a gram-positive bacteria called *Staphylococcus aureus* (sample number 25747). This particular sample is from a strain that is resistant to the antibiotic methicillin (a type of penicillin). It is also called MRSA: methicillin-resistant *Staphylococcus aureus*. It was isolated from (human) blood and caused bacteraemia, an infection of the bloodstream.
@@ -150,10 +154,10 @@ canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8
 
 !!! note "Question"
     How do long- and short-read assembly methods differ?
-    
-    !!! success ""
-        ??? "**Answer**"
-            short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
+
+!!! success ""
+    ??? "**Answer**"
+        short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
 
 Q: Where can we find out the what the approximate genome size should be for the species being assembled? A: NCBI Genomes - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
 
@@ -594,7 +598,7 @@ How can we get more information about the assembly from Spades?
 - Look at the assembly graph <fn>assembly_graph.fastg</fn>, e.g. in the program Bandage. This shows how contigs are related, albeit with ambiguity in some places.
 
 
-## Comparative genomics
+<!-- ## Comparative genomics
 
 Compare genomes:
 
@@ -607,7 +611,7 @@ Run prokka on the three - how do they differ
 
 Mauve: align the illumina contigs to the polished pacbio contigs.
 
-
+-->
 
 ### Links
 

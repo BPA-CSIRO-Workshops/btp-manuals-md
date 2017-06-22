@@ -8,13 +8,15 @@ This tutorial demonstrates how to use long Pacbio sequence reads to assemble a b
 
 Tools (and versions) used in this tutorial include:
 
-- canu 1.5 [recently updated]
+- canu 1.5 (requires java 1.8)
 - infoseq and sizeseq (part of EMBOSS) 6.6.0.0
-- circlator 1.5.1 [recently updated]
+- circlator 1.5.1 
 - bwa 0.7.15
 - samtools 1.3.1
 - makeblastdb and blastn (part of blast) 2.4.0+
 - pilon 1.20
+- spades 3.10.1
+- prokka 1.12
 
 ## Learning objectives
 
@@ -146,7 +148,12 @@ canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8
 
 ### Questions
 
-Q: How do long- and short-read assembly methods differ? A: short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
+!!! note "Question"
+    How do long- and short-read assembly methods differ?
+    
+    !!! success ""
+        ??? "**Answer**"
+            short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
 
 Q: Where can we find out the what the approximate genome size should be for the species being assembled? A: NCBI Genomes - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
 

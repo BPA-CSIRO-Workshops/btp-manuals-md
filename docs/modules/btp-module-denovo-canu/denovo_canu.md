@@ -155,17 +155,30 @@ canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8
 !!! note "Question"
     How do long- and short-read assembly methods differ?
 
-!!! success ""
-    ??? "**Answer**"
-        short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
+!!! success "Answer"
+    short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
 
-Q: Where can we find out the what the approximate genome size should be for the species being assembled? A: NCBI Genomes - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
+!!! note "Question"
+    Where can we find out the what the approximate genome size should be for the species being assembled?
 
-Q: In the assembly output, what are the unassembled reads? Why are they there?
+!!! success "Answer"
+    NCBI Genomes - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
 
-Q: What are the corrected reads? How did canu correct the reads?
+!!! note "Question"
+    In the assembly output, what are the unassembled reads? Why are they there?
 
-Q: Where could you view the output .gfa and what would it show?
+!!! success "Answer"
+
+!!! note "Question"
+    What are the corrected reads? How did canu correct the reads?
+
+!!! success "Answer"
+
+
+!!! note "Question"
+    Where could you view the output .gfa and what would it show?
+
+!!! success "Answer"
 
 ## Trim and circularise
 
@@ -598,7 +611,7 @@ How can we get more information about the assembly from Spades?
 - Look at the assembly graph <fn>assembly_graph.fastg</fn>, e.g. in the program Bandage. This shows how contigs are related, albeit with ambiguity in some places.
 
 
-<!-- ## Comparative genomics
+## Comparative genomics
 
 Compare genomes:
 
@@ -611,7 +624,7 @@ Run prokka on the three - how do they differ
 
 Mauve: align the illumina contigs to the polished pacbio contigs.
 
--->
+
 
 ### Links
 

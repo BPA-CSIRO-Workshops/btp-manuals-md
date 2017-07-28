@@ -6,7 +6,7 @@ To see information on the initial Mkdocs setup see: https://bpa-csiro-workshops.
 ## Deployment
 
 The tutorials have been deployed here: https://bpa-csiro-workshops.github.io/btp-manuals-md  
-The template has been depolyed here: https://bpa-csiro-workshops.github.io/btp-module-template-md/
+The template has been deployed here: https://bpa-csiro-workshops.github.io/btp-module-template-md/
 
 ## Github Repository
 

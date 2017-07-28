@@ -32,9 +32,9 @@ Simplified version of workflow:
 
 ![workflow](images/flowchart.png)
 
-!!! warning "Important" 
-    Background Information 
-    
+<!-- !!! warning "Important"
+    Background Information -->
+
 !!! note "Question"
         How do long- and short-read assembly methods differ?
 
@@ -63,13 +63,11 @@ Simplified version of workflow:
 
 The files we need are:
 
-- **pacbio.fastq.gz</fn>** - the PacBio reads
+- **<fn>pacbio.fastq.gz</fn>** - the PacBio reads
 - **<fn>illumina_R1.fastq.gz</fn>** - the Illumina forward reads
 - **<fn>illumina_R2.fastq.gz</fn>** - the Illumina reverse reads
 
-<!--
-
-If you already have the files, skip forward to next section, [Assemble](#assemble).
+<!-- If you already have the files, skip forward to next section, [Assemble](#assemble).
 
 Otherwise, this section has information about how to find and move the files:
 
@@ -122,7 +120,7 @@ mv longfilename_R2.fastq.gz illumina_R2.fastq.gz
 ```
 -->
 
-### NGS Workshop
+### Pre-computed data
 
 Some of these tools will take too long to run in this workshop. For these tools, we have pre-computed the output files. In this workshop, we will still enter in the commands and set the tool running, but will sometimes then stop the run and move on to pre-computed output files.
 
@@ -137,23 +135,24 @@ The sample used in this tutorial is a gram-positive bacteria called *Staphylococ
 ## Assemble<a name="assemble"></a>
 
 - We will use the assembly software called Canu, <https://github.com/marbl/canu>.
-- As we don't have time for Canu to complete, we will look at pre-computed data in the folder **canu_outdir**.
 
-!!! failure "Precomputed section" 
-    ```text
-    canu -p canu -d canu_outdir_NGS genomeSize=2.8m -pacbio-raw pacbio.fastq.gz    
-    ```
+- Type in:
 
-    - the first `canu` tells the program to run    
-    - `-p canu` names prefix for output files ("canu")    
-    - `-d canu_outdir_NGS` names output directory    
-    - `genomeSize` only has to be approximate.    
-        - e.g. *Staphylococcus aureus*, 2.8m    
-        - e.g. *Streptococcus pyogenes*, 1.8m    
+```text
+canu -p canu -d canu_outdir_NGS genomeSize=2.8m -pacbio-raw pacbio.fastq.gz    
+```
 
-    - Canu will correct, trim and assemble the reads.    
-    - Various output will be displayed on the screen.    
+- the first `canu` tells the program to run    
+- `-p canu` names prefix for output files ("canu")    
+- `-d canu_outdir_NGS` names output directory    
+- `genomeSize` only has to be approximate.    
+    - e.g. *Staphylococcus aureus*, 2.8m    
+    - e.g. *Streptococcus pyogenes*, 1.8m    
 
+- Canu will correct, trim and assemble the reads.    
+- Various output will be displayed on the screen.    
+
+- As we don't have time for Canu to complete, stop the run by typing Ctrl-C. We will look at pre-computed data in the folder **canu_outdir**.
 
 ### Canu output
 
@@ -184,7 +183,7 @@ infoseq canu.contigs.fasta
 
 This matches what we would expect for this sample. For other data, Canu may not be able to join all the reads into one contig, so there may be several contigs in the output. Also, the sample may contain some plasmids and these may be found full or partially by Canu as additional contigs.  
 
-!!! hint "Try it later" 
+!!! hint "Try it later"
     Change Canu parameters if required: If the assembly is poor with many contigs, re-run Canu with extra sensitivity parameters; e.g.    
 
     ```text
@@ -205,10 +204,7 @@ Overhangs are shown in blue:
 
 Run Circlator:
 
-We have already run the command below and now we can look at pre-computed data in the folder **circlator_outdir**    
 
-!!! failure "Pre-computed section" 
-    To run the command move back into your main analysis folder.
 
     ```text
     cd /home/trainee/long_reads/workshop_files
@@ -220,6 +216,8 @@ We have already run the command below and now we can look at pre-computed data i
     `canu_outdir/canu.contigs.fasta` is the file path to the input Canu assembly    
     `canu_outdir/canu.correctedReads.fasta.gz` is the file path to the corrected Pacbio reads - note, fastA not fastQ    
     `circlator_outdir_NGS` is the name of the output directory.    
+
+Stop the run by typing Ctrl-C. We will look at pre-computed data in the folder circlator_outdir.
 
 
 ### Circlator output
@@ -297,7 +295,7 @@ Open this file in a text editor (e.g. nano: `nano contig1.fasta`) and change the
 
 Move the file back into the main folder (`mv contig1.fasta ../`).
 
-!!! hint "Tips" 
+!!! hint "Tips"
     If all the contigs have not circularised with Circlator, an option is to change the `--b2r_length_cutoff` setting to approximately 2X the average read depth.
 
 
@@ -321,9 +319,7 @@ bwa index contig1.fasta
 ```
 
 - Align Illumina reads using using bwa mem:
-  We will use the pre-computed file called **aln.bam**.     
 
-!!! failure "Precomputed section" 
     ```text
     bwa mem -t 4 contig1.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln_NGS.bam     
     ```     
@@ -335,6 +331,7 @@ bwa index contig1.fasta
     - ` | samtools sort` pipes the output to samtools to sort     
     - `> aln_NGS.bam` sends the alignment to the file **<fn>aln_NGS.bam</fn>**     
 
+Stop the run by typing Ctrl-C. We will use the pre-computed file called aln.bam.
 
 ### Extract unmapped Illumina reads
 
@@ -362,9 +359,7 @@ We now have three files of the unampped reads: **<fn> unmapped.R1.fastq</fn>**, 
 ### Assemble the unmapped reads
 
 - Assemble with Spades (<http://cab.spbu.ru/software/spades/>):
-- We will use the pre-computed file in the folder **spades_assembly**.
 
-!!! failure "Precomputed section" 
     ```text
     spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --careful --cov-cutoff auto -o spades_assembly_NGS
     ```
@@ -376,6 +371,7 @@ We now have three files of the unampped reads: **<fn> unmapped.R1.fastq</fn>**, 
     - `--cov-cutoff auto` computes the coverage threshold (rather than the default setting, "off")
     - `-o` is the output directory
 
+Stop the run by typing Ctrl-C. We will use the pre-computed file in the folder spades_assembly.
 
 Move into the output directory (**<fn>spades_assembly</fn>**) and look at the contigs:
 
@@ -543,10 +539,9 @@ We will correct the Pacbio assembly with Illumina reads, using the tool Pilon (<
 ### Make an alignment file
 
 - Align the Illumina reads (R1 and R2) to the draft PacBio assembly, e.g. **<fn>genome.fasta</fn>**:
-- We will use the pre-computed file called **aln_illumina_pacbio.bam**.
 
 
-!!! failure "Precomputed section" 
+
     ```text
     bwa index genome.fasta    
     bwa mem -t 4 genome.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln_illumina_pacbio_NGS.bam    
@@ -554,6 +549,10 @@ We will correct the Pacbio assembly with Illumina reads, using the tool Pilon (<
 
     - `-t` is the number of cores <!-- set this to an appropriate number. (To find out how many you have, `grep -c processor /proc/cpuinfo`) -->    
 
+
+
+Stop the run by typing Ctrl-C. We will use the pre-computed file called aln_illumina_pacbio.bam.
+- We will use the pre-computed file called **aln_illumina_pacbio.bam**.
 
 
 - Index the files:
@@ -571,9 +570,9 @@ Pilon is a software tool which can be used to:
 - Automatically improve draft assemblies    
 - Find variation among strains, including large event detection    
 
-- We will use the pre-computed files called with the prefixes **pilon1**._
 
-!!! failure "Precomputed section" 
+
+
     ```text
     pilon --genome genome.fasta --frags aln_illumina_pacbio.bam --output pilon1_NGS --fix all --mindepth 0.5 --changes --verbose --threads 4
     ```
@@ -587,7 +586,8 @@ Pilon is a software tool which can be used to:
     - `--verbose` prints information to the screen during the run     
     - `--threads`: the number of cores     
 
-
+Stop the run by typing Ctrl-C. We will use the pre-computed files called with the prefixes pilon1.
+- We will use the pre-computed files called with the prefixes **pilon1**._
 
 Look at the changes file:
 
@@ -713,15 +713,101 @@ How can we get more information about the assembly from Spades?
 
 -->
 
+## Short-read assembly: a comparison
 
-## Next
+So far, we have assembled the long PacBio reads into one contig (the chromosome) and found an additional plasmid in the Illumina short reads.
 
-### Further analyses
+If we only had Illumina reads, we could also assemble these using the tool Spades.
+
+You can try this here, or try it later on your own data.
+
+### Get data
+
+We will use the same Illumina data as we used above:
+
+- <fn>illumina_R1.fastq.gz</fn>: the Illumina forward reads
+- <fn>illumina_R2.fastq.gz</fn>: the Illumina reverse reads
+
+This is from Sample 25747.
+
+### Assemble
+
+Run Spades:
+
+```text
+spades.py -1 illumina_R1.fastq.gz -2 illumina_R2.fastq.gz --careful --cov-cutoff auto -o spades_assembly_all_illumina
+```
+
+- `-1` is input file of forward reads
+- `-2` is input file of reverse reads
+- `--careful` minimizes mismatches and short indels
+- `--cov-cutoff auto` computes the coverage threshold (rather than the default setting, "off")
+- `-o` is the output directory
+
+### Results
+
+Move into the output directory and look at the contigs:
+
+```text
+infoseq contigs.fasta
+```
+
+### Questions
+
+How many contigs were found by Spades?
+
+- many
+
+How does this compare to the number of contigs found by assembling the long read data with Canu?
+
+- many more.
+
+Does it matter that an assembly is in many contigs?
+
+- Yes
+
+  - broken genes => missing/incorrect annotations
+  - less information about structure: e.g. number of plasmids
+
+- No
+
+  - Many or all genes may still be annotated
+  - Gene location is useful (e.g. chromosome, plasmid1) but not always essential (e.g. presence/absence of particular resistance genes)
+
+How can we get more information about the assembly from Spades?
+
+- Look at the assembly graph <fn>assembly_graph.fastg</fn>, e.g. in the program Bandage. This shows how contigs are related, albeit with ambiguity in some places.
+
+## Comparative genomics
+
+We will compare the genomes assembled by:
+
+- pacbio pre-pilon
+- pacbio post pilon
+- illumina only
+
+
+### Do the annotations differ
+
+Run prokka on the three - how do they differ
+
+
+
+
+
+### Align the short-read and long-read assemblies
+
+Mauve: align the illumina contigs to the polished pacbio contigs.
+
+
+
+
+## Further analyses
 
 - Annotate genomes, e.g. with Prokka, https://github.com/tseemann/prokka
 - Comparative genomics, e.g. with Roary, https://sanger-pathogens.github.io/Roary/
 
-### Links
+## Links
 
 <!--- [Details of bas.h5 files](https://s3.amazonaws.com/files.pacb.com/software/instrument/2.0.0/bas.h5+Reference+Guide.pdf)
 -->

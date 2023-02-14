@@ -37,7 +37,7 @@
 
 ![image](images/generic.jpg) **Dr Anna Syme** Bioinformatician, Melbourne Bioinformatics, Melbourne  
 
-![image](images/Teber.png) **Dr. Erdahl Teber** Senior Research Officer (Bioinformatics), Children Medical Research Institute, Kids Cancer Alliance, University of Sydney, Sydney  
+![image](images/generic.jpg) **Dr. Erdahl Teber** Senior Research Officer (Bioinformatics), Children Medical Research Institute, Kids Cancer Alliance, University of Sydney, Sydney  
 
 ![image](images/Tyagi.jpg) **Dr. Sonika Tyagi** Bioinformatics Supervisor, Australian Genome Research Facility Ltd, The Walter and Eliza Hall Institute, Melbourne   
 

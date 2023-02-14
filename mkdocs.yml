@@ -31,11 +31,13 @@ markdown_extensions:
     - smarty
     - tables
     - markdown_include.include
-    - codehilite(linenums=True)
-#    - codehilite
-    - toc(permalink=true)
+    - codehilite:
+        linenums: True
+    - toc:
+        permalink: True
     - mdx_math
-    - pymdownx.betterem(smart_enable=all)
+    - pymdownx.betterem:
+        smart_enable: all
     - pymdownx.caret
     - pymdownx.critic
     - pymdownx.inlinehilite
@@ -43,7 +45,8 @@ markdown_extensions:
     - pymdownx.mark
     - pymdownx.smartsymbols
     - pymdownx.superfences
-    - pymdownx.tasklist(custom_checkbox=true)
+    - pymdownx.tasklist:
+        custom_checkbox: True
     - pymdownx.tilde
     - pymdownx.details
 
@@ -55,14 +58,14 @@ extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     - js/details.js
 
-pages:
-- Home: index.md
-- The Trainers: trainers/trainers.md
-- Timetable:
-  - Intro to NGS: timetables/timetable_introNGS.md
-  - Cancer Genomics: timetables/timetable_cancer.md
-  - Long Read: timetables/timetable_longRead.md
-- Workshop Information: preamble.md
+nav:
+  - Home: index.md
+  - The Trainers: trainers/trainers.md
+  - Timetable:
+    - Intro to NGS: timetables/timetable_introNGS.md
+    - Cancer Genomics: timetables/timetable_cancer.md
+    - Long Read: timetables/timetable_longRead.md
+  - Workshop Information: preamble.md
 
 # - All Modules:
 #     - ChIP-seq: modules/btp-module-chip-seq/chip-seq.md
@@ -96,7 +99,7 @@ pages:
 #     - Metagenomics Visualisation: modules/metagenomics-module-vis/vis.md
 #     - Metagenomics WGA: modules/metagenomics-module-wga/wga.md
 
-- Introduction to NGS Modules:
+  - Introduction to NGS Modules:
     - Introduction to Command Line: modules/btp-module-ngs-cli/commandline.md
     - Data Quality: modules/btp-module-ngs-qc/ngs-qc.md
     - Read Alignment: modules/btp-module-ngs-mapping/alignment.md
@@ -106,7 +109,7 @@ pages:
     - de novo Genome Assembly: modules/btp-module-velvet/velvet.md
     - DeNovo Canu: modules/btp-module-denovo-canu/denovo_canu.md
 
-- Cancer Genomics Modules:
+  - Cancer Genomics Modules:
     - Read Alignment: modules/cancer-module-alignment/alignment.md
     - Single Nucleotide Variant Calling and Annotation: modules/cancer-module-snv/snv.md
     - Copy Number Variation: modules/cancer-module-cnv/cnv-tut.md
@@ -116,13 +119,13 @@ pages:
         - Assessing somatic mutational signatures: modules/cancer-module-somatic/01_signatures.md
         - Cohort analysis for the identification of driver genes: modules/cancer-module-somatic/02_intogen.md
 
-- DeNovo Modules:
+  - DeNovo Modules:
 #    - DeNovo Command Line: modules/denovo-module-cli/commandline.md
     - Bacterial Assembly: modules/denovo-module-bac/bac_asm.md
     - Eukaryote Assembly: modules/denovo-module-euk/eukaryotic_assem.md
     - Scaffolding: modules/denovo-module-scaffolding/scaffold.md
 
-- Metagenomics Modules:
+  - Metagenomics Modules:
     - Metagenomics QC: modules/metagenomics-module-qc/ngs-qc.md
     - Metagenomics Taxonomic: modules/metagenomics-module-tax/tax.md
     - Metagenomics Visualisation: modules/metagenomics-module-vis/vis.md

@@ -1,0 +1,1219 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This contains all material for Markdown version of BTP workshops.">
+      
+      
+        <meta name="author" content="Authors">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Mining EBI Metagenomics (EMG) output with R - Markdown Manuals for Bioinformatics Training Platform (BTP)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/details.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mining-ebi-metagenomics-emg-output-with-r" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-header__button md-logo" aria-label="Markdown Manuals for Bioinformatics Training Platform (BTP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markdown Manuals for Bioinformatics Training Platform (BTP)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mining EBI Metagenomics (EMG) output with R
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-nav__button md-logo" aria-label="Markdown Manuals for Bioinformatics Training Platform (BTP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Markdown Manuals for Bioinformatics Training Platform (BTP)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../trainers/trainers/" class="md-nav__link">
+        The Trainers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Timetable
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Timetable" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Timetable
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_introNGS/" class="md-nav__link">
+        Intro to NGS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_cancer/" class="md-nav__link">
+        Cancer Genomics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_longRead/" class="md-nav__link">
+        Long Read
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preamble/" class="md-nav__link">
+        Workshop Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Introduction to NGS Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introduction to NGS Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction to NGS Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-cli/commandline/" class="md-nav__link">
+        Introduction to Command Line
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-qc/ngs-qc/" class="md-nav__link">
+        Data Quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-mapping/alignment/" class="md-nav__link">
+        Read Alignment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-chip-seq/chip-seq/" class="md-nav__link">
+        ChIP-seq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-rna-seq/rna-seq/" class="md-nav__link">
+        RNA-Seq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-bio/biol/" class="md-nav__link">
+        NGS Biological Insight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-velvet/velvet/" class="md-nav__link">
+        de novo Genome Assembly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-denovo-canu/denovo_canu/" class="md-nav__link">
+        DeNovo Canu
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Cancer Genomics Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cancer Genomics Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Cancer Genomics Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-alignment/alignment/" class="md-nav__link">
+        Read Alignment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-snv/snv/" class="md-nav__link">
+        Single Nucleotide Variant Calling and Annotation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-cnv/cnv-tut/" class="md-nav__link">
+        Copy Number Variation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-sv/sv_tut/" class="md-nav__link">
+        Structural Variant Analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-viz/visu/" class="md-nav__link">
+        Variant Visualisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_6">
+          Somatic Mutations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Somatic Mutations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          Somatic Mutations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-somatic/01_signatures/" class="md-nav__link">
+        Assessing somatic mutational signatures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-somatic/02_intogen/" class="md-nav__link">
+        Cohort analysis for the identification of driver genes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          DeNovo Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DeNovo Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          DeNovo Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-bac/bac_asm/" class="md-nav__link">
+        Bacterial Assembly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-euk/eukaryotic_assem/" class="md-nav__link">
+        Eukaryote Assembly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-scaffolding/scaffold/" class="md-nav__link">
+        Scaffolding
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Metagenomics Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Metagenomics Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Metagenomics Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-qc/ngs-qc/" class="md-nav__link">
+        Metagenomics QC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-tax/tax/" class="md-nav__link">
+        Metagenomics Taxonomic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-vis/vis/" class="md-nav__link">
+        Metagenomics Visualisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-wga/wga/" class="md-nav__link">
+        Metagenomics WGA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-fda/fda/" class="md-nav__link">
+        Metagenomics Functional Analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-learning-outcomes" class="md-nav__link">
+    Key Learning Outcomes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources-youll-be-using" class="md-nav__link">
+    Resources You’ll be Using
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources You’ll be Using">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tools-used" class="md-nav__link">
+    Tools Used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    Useful Links
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-exploratory-analysis-of-emg-portal-contingency-tables" class="md-nav__link">
+    Part 1: Exploratory analysis of EMG portal contingency tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-of-r-packages" class="md-nav__link">
+    Loading of R packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-emg-input-data-for-analysis" class="md-nav__link">
+    Load EMG input data for analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocess-the-data" class="md-nav__link">
+    Preprocess the data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-correspondence-analysis-ca" class="md-nav__link">
+    Perform Correspondence Analysis (CA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation-coefficient" class="md-nav__link">
+    Correlation coefficient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-clustering-of-principal-components" class="md-nav__link">
+    Hierarchical Clustering of principal components
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mining-ebi-metagenomics-emg-output-with-r">Mining EBI Metagenomics (EMG) output with R<a class="headerlink" href="#mining-ebi-metagenomics-emg-output-with-r" title="Permanent link">&para;</a></h1>
+<h2 id="key-learning-outcomes">Key Learning Outcomes<a class="headerlink" href="#key-learning-outcomes" title="Permanent link">&para;</a></h2>
+<hr />
+<p>After completing this module the trainee should be able to:</p>
+<ul>
+<li>
+<p>Load requred R packages and input data for analysis from EMG</p>
+</li>
+<li>
+<p>Know how analysis the data with R statistical packages</p>
+</li>
+</ul>
+<h2 id="resources-youll-be-using">Resources You’ll be Using<a class="headerlink" href="#resources-youll-be-using" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="tools-used">Tools Used<a class="headerlink" href="#tools-used" title="Permanent link">&para;</a></h3>
+<p>RStudio:  <a href="https://www.rstudio.com/">https://www.rstudio.com/</a></p>
+<h3 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h3>
+<p>America Gut Project: <a href="https://www.ebi.ac.uk/metagenomics/projects/ERP012803">EMG Project ERP012803</a></p>
+<p>Author: B T.F. Alako - Cochrane team: European Nucleotide Archive. </p>
+<h3 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h3>
+<p>EBI Metagenomics resource (EMG) :   <a href="www.ebi.ac.uk/metagenomics/">EBI MG Portal</a></p>
+<h2 id="part-1-exploratory-analysis-of-emg-portal-contingency-tables">Part 1: Exploratory analysis of EMG portal contingency tables<a class="headerlink" href="#part-1-exploratory-analysis-of-emg-portal-contingency-tables" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>The American Gut project is the largest crowdsourced citizen science project to date. Fecal, oral, skin, and other body site samples collected from thousands of participants represent the largest human microbiome cohort in existence. Detailed health and lifestyle and diet data associated with each sample is enabling us to deeply examine associations between the human microbiome and factors such as diet (from vegan to near carnivore and everything in between), season, amount of sleep, and disease states such as IBD, diabetes, or autism spectrum disorder-as well as many other factors not listed here. The American Gut project also encompasses the British Gut and Australian Gut projects, widening the cohort beyond North America. As the project continues to grow, we will be able to identify significant associations that would not be possible with smaller, geographically and health/disease status-limited cohorts. <a href="https://www.ebi.ac.uk/metagenomics/projects/ERP012803">EMG Project ERP012803</a></p>
+<p>We will explore the data generated by the study above. The data is available at: <a href="https://www.ebi.ac.uk/metagenomics/projects/ERP012803">EMG Project ERP012803</a></p>
+<h3 id="loading-of-r-packages">Loading of R packages<a class="headerlink" href="#loading-of-r-packages" title="Permanent link">&para;</a></h3>
+<p>First we need to load the required R packages for analysis.</p>
+<div class="highlight"><pre><span></span><code>suppressWarnings(suppressMessages(require(stringr)))      # String format
+suppressWarnings(suppressMessages(require(ade4)))         # Multivariate analysis
+suppressWarnings(suppressMessages(require(ggplot2)))      # Fancy plotting
+suppressWarnings(suppressMessages(require(grid)))         # Has the viewport function
+suppressWarnings(suppressMessages(require(dplyr)))        # Data manipulation
+suppressWarnings(suppressMessages(require(tidyr)))        # Data manipulation
+suppressWarnings(suppressMessages(require(FactoMineR)))   # Multivariate analysis
+suppressWarnings(suppressMessages(require(factoextra)))   # Visualize result of multivariate analysis
+</code></pre></div>
+<h3 id="load-emg-input-data-for-analysis">Load EMG input data for analysis<a class="headerlink" href="#load-emg-input-data-for-analysis" title="Permanent link">&para;</a></h3>
+<p>We can then load the analysis summary and metadata files for ERP0123803.</p>
+<div class="highlight"><pre><span></span><code>ERP012803 &lt;- &quot;https://www.ebi.ac.uk/metagenomics/projects/ERP012803/download/2.0/export?contentType=text&amp;exportValue=taxonomy_abundances&quot;
+ERP012803.meta &lt;- &quot;https://www.ebi.ac.uk/metagenomics/projects/ERP012803/overview/doExport&quot;;
+gutproject &lt;- tbl_df(read.delim(file=ERP012803))
+meta &lt;-  read.csv(file=ERP012803.meta)
+</code></pre></div>
+<h3 id="preprocess-the-data">Preprocess the data<a class="headerlink" href="#preprocess-the-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Filter to only retain full taxonomic lineages with a species name</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>gutproject &lt;- gutproject %&gt;% 
+              rename(taxonomy=X.SampleID) %&gt;%
+                #mutate(taxonomy=gsub(&quot;.*?s__&quot;,&quot;&quot;,taxonomy)) %&gt;% 
+                mutate(taxonomy=gsub(&quot;.*?g__&quot;,&quot;&quot;,taxonomy)) %&gt;%
+                mutate(taxonomy=gsub(&quot;;s__&quot;,&quot;_&quot;, taxonomy)) %&gt;%
+                  filter(taxonomy !=&quot;&quot; | taxonomy==&#39;_&#39; ) %&gt;%
+                    filter(!grepl(&#39;_$&#39;, taxonomy))
+</code></pre></div>
+ - Merge counts of species in the same experimental sample</p>
+<p><div class="highlight"><pre><span></span><code>gutproject &lt;- gutproject %&gt;% 
+                group_by(taxonomy) %&gt;%
+                  summarize_each(funs(sum)) %&gt;%
+                    ungroup()
+</code></pre></div>
+ - Use the species name as the rowname, this replaces the default numerical name </p>
+<div class="highlight"><pre><span></span><code>rownames(gutproject) &lt;- gutproject$taxonomy
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>You can ignore warning: Setting row names on a tibble is deprecated.</p>
+<ul>
+<li>Transform the wide format data into the long format for the purpose of appending descriptive information</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>gutproject.long  &lt;- gutproject %&gt;% 
+                      gather(sampleb, freq, ERR1072624:ERR1160857) %&gt;%
+                        filter(taxonomy !=&quot;Root&quot;)
+</code></pre></div>
+ - Retain only the sample description and the Run id from the metadata</p>
+<p><div class="highlight"><pre><span></span><code>meta &lt;- meta %&gt;% select(Sample.Description, Run.ID)
+</code></pre></div>
+ - What is the composition of the data.</p>
+<div class="highlight"><pre><span></span><code>meta.strip &lt;-  tbl_df(meta) %&gt;% mutate(Sample.Description=gsub(&quot; &quot;,&quot;_&quot;,Sample.Description),
+                         Sample.Description=gsub(&quot;American_Gut_Project_&quot;,&quot;&quot;, Sample.Description), 
+                         Sample.Description=gsub(&quot;American_&quot;,&quot;&quot;, Sample.Description)
+                         )
+meta.strip &lt;- meta.strip %&gt;% group_by(Sample.Description) %&gt;%
+              mutate(count=n()) %&gt;% ungroup() %&gt;%
+              select(Sample.Description, count)  %&gt;% unique()
+
+meta.strip %&gt;% ggplot(aes(x=Sample.Description, y=count)) +  geom_bar(stat=&#39;identity&#39;) + 
+                geom_text(aes(label=count))  + theme_bw() +
+                      theme(axis.text.x=element_text(angle=45, hjust=1)) + 
+                      ggtitle(&quot;American gut project&quot;)
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+</div>
+<p>What is the data mostly composed of?</p>
+<ul>
+<li>Append metadata to the gut data</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>gutproject.df &lt;- merge(gutproject.long, meta, by.x=&#39;sampleb&#39;, by.y=&#39;Run.ID&#39;)
+gutproject.df &lt;- tbl_df(gutproject.df)
+</code></pre></div>
+ - Clean up the description of sample</p>
+<p><div class="highlight"><pre><span></span><code>gutproject.df &lt;- gutproject.df %&gt;% 
+                  mutate(Sample.Description=gsub(&quot; &quot;,&quot;_&quot;,Sample.Description), 
+                   Sample.Description=gsub(&quot;American_Gut_Project_&quot;,&quot;&quot;, Sample.Description),
+                   Sample.Description=gsub(&quot;American_&quot;,&quot;&quot;, Sample.Description)) %&gt;%
+                    ungroup() 
+</code></pre></div>
+ - Merge taxonomy occurences count per data source</p>
+<p><div class="highlight"><pre><span></span><code>gutproject.df &lt;- gutproject.df %&gt;%
+                  group_by(Sample.Description,taxonomy) %&gt;% 
+                    summarise(cum=sum(freq)) %&gt;% ungroup()
+gutproject.df &lt;- gutproject.df %&gt;%
+                  select(taxonomy,Sample.Description,cum)
+                  #filter(Sample.Description !=&quot;Stool_sample&quot;) %&gt;%
+                  #filter(Sample.Description !=&quot;Stool_sample&quot; &amp; Sample.Description !=&quot;Mouth_sample&quot; )
+                  #filter( Sample.Description     !=&quot;Vaginal_mucus_sample&quot; )
+</code></pre></div>
+ - Transform the long format to wide format for the purpose of Mutivariate analysis</p>
+<div class="highlight"><pre><span></span><code>gutproject.df &lt;- gutproject.df %&gt;%
+                    spread(Sample.Description, cum, fill=0) %&gt;%
+                      as.data.frame()
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>gutproject.mat &lt;- gutproject.df %&gt;% select(-c(1)) %&gt;% as.matrix()
+rownames(gutproject.mat) &lt;- gsub(&quot;\\[|\\]&quot;,&quot;&quot;, perl=TRUE, gutproject.df$taxonomy)
+</code></pre></div>
+ - Clean up the matrix</p>
+<div class="highlight"><pre><span></span><code>gutproject.mat = gutproject.mat[!rownames(gutproject.mat)==&quot;&quot;,]
+as.matrix(table(rownames(gutproject.mat)))[as.matrix(table(rownames(gutproject.mat)))&gt;1,]
+todiscard &lt;- (as.matrix(table(rownames(gutproject.mat)) &gt; 1))
+myselect = names(todiscard[todiscard[,1]==TRUE,])
+gutproject.mat&lt;- gutproject.mat[!rownames(gutproject.mat) %in% myselect,]
+gutproject.mat &lt;- gutproject.mat[which(rowSums(gutproject.mat)!=0),]
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+</div>
+<p>Is there any association between the species and the data source?</p>
+<ul>
+<li>Perform a chi-square test of independence, this evaluates whether there is a significant dependence between species and biological samples</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>chisq &lt;- chisq.test(gutproject.mat)
+chisq
+</code></pre></div>
+The results should look like this.
+<div class="highlight"><pre><span></span><code>Pearson&#39;s Chi-squared test
+data:  gutproject.mat
+X-squared = 106730000, df = 8442, p-value &lt; 2.2e-16
+</code></pre></div>
+The species and biological samples are statistically significantly associated (p-value=0)</p>
+<h3 id="perform-correspondence-analysis-ca">Perform Correspondence Analysis (CA)<a class="headerlink" href="#perform-correspondence-analysis-ca" title="Permanent link">&para;</a></h3>
+<p>Correspondence Analysis (CA) is a generalized form of Principal Component Analysis for categorical data. We use CA to reduce the dimension of the data without loosing the most important information. CA is used to graphically visualize rows points and column points in a low dimensional space</p>
+<div class="highlight"><pre><span></span><code>gutproject.ca &lt;- CA(gutproject.mat, graph=FALSE)
+</code></pre></div>
+<ul>
+<li>Explore the content of the CA output</li>
+</ul>
+<div class="highlight"><pre><span></span><code>summary(gutproject.ca, nb.dec = 2, nbelements = 4, ncp= 3)
+</code></pre></div>
+<p>The result of the function summary() contains the chi-square statistics and 3 tables:</p>
+<ul>
+<li>Table 1- Eigenvalues, displays the variances and the percentage of vaiances retained by each dimension.</li>
+<li>Table 2, Contains the coordinates, the contribution and the cos2 (quality of representation [0-1] of the first 4 active rows variable on the dimension 1, 2 and 3</li>
+<li>Table 3: displays the coordinates, the contribution and the cos2 of the first 4 active column variables on the dimension 1, 2 and 3</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+</div>
+<p>Can you interprete the CA result?</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+</div>
+<p>correlation coef., chi-square statistic</p>
+<h3 id="correlation-coefficient">Correlation coefficient<a class="headerlink" href="#correlation-coefficient" title="Permanent link">&para;</a></h3>
+<p>Eigen values is the amount of information retained by each axis.</p>
+<div class="highlight"><pre><span></span><code>eig &lt;- get_eigenvalue(gutproject.ca)
+trace &lt;- sum(eig$eigenvalue)
+cor.coef &lt;- sqrt(trace)
+cor.coef
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[1] 1.378614
+</code></pre></div>
+<p>As a rule of thumb a correlation above 0.2 can be considered important (Bendixen 1995, 567; Healey 2013, 289-290)
+The correlation coef. is 1.38 in the American gut project dataset, indicating a strong association between row (species) and column(biological samples variables.). 
+A more rigorous approach for examining the association is to use Chi-square statistics. 
+The association is highly significant (p-value=0) </p>
+<p>Explore the percentages of inertia explained by the CA dimensions, the scree plot</p>
+<p><div class="highlight"><pre><span></span><code>fviz_screeplot(gutproject.ca, barfill=&#39;white&#39;, addlabels=TRUE) + theme_bw()
+</code></pre></div>
+The point at which the scree plot shows a bend mignt indicate an optimal dimensionality.</p>
+<h3 id="hierarchical-clustering-of-principal-components">Hierarchical Clustering of principal components<a class="headerlink" href="#hierarchical-clustering-of-principal-components" title="Permanent link">&para;</a></h3>
+<p>Compute hierarchical clustering of species of CA results</p>
+<p><div class="highlight"><pre><span></span><code>gutproject.hcpc &lt;- HCPC(gutproject.ca, graph = TRUE , nb.clust=4, order=TRUE )
+</code></pre></div>
+ - Visualize the CA results</p>
+<p>Symmetric biplot, whereby both rows (blue) and columns (red) are represented in the same space using the principal coordinates. Only the distance between row points or the distance between column points can be reliably interpreted. 
+With a symmetric plot, only general statements can be drawn about the pattern. 
+The inter-distance between rows and column can not be interpreted.</p>
+<p><div class="highlight"><pre><span></span><code>fviz_ca_biplot(gutproject.ca, repel=TRUE, select.row = list(contrib = 95), select.col = list(contrib = 10), geom=&quot;text&quot;) + theme_minimal()
+</code></pre></div>
+ - Remove labels and add cluster centers</p>
+<p>A 3D map of the hierarchical clustering of the principal component.</p>
+<p><div class="highlight"><pre><span></span><code>plot(gutproject.hcpc, choice =&quot;3D.map&quot;, draw.tree = FALSE,
+     ind.names = FALSE, centers.plot = TRUE, 
+     title=&#39;Hierarchical clustering of the Principal Components&#39;)
+</code></pre></div>
+ * Hierarchical Clustering of principal component.</p>
+<p>Compute hierarchical clustering of biological samples of CA results</p>
+<p><div class="highlight"><pre><span></span><code>res.hcpc &lt;- HCPC(gutproject.ca, cluster.CA = &quot;columns&quot;, graph = TRUE , nb.clust=4, order=TRUE )
+</code></pre></div>
+Biological sample cluster in the dataset
+ using fviz_cluster and theme_bw()</p>
+<p>Transpose the row and column in the gut data and perform a new correspondance analysis</p>
+<p><div class="highlight"><pre><span></span><code>gutproject.ca &lt;- CA(t(gutproject.mat), ncp=4)
+</code></pre></div>
+Symmetric biplot </p>
+<p><div class="highlight"><pre><span></span><code>fviz_ca_biplot(gutproject.ca, repel=TRUE, select.row = list(contrib = 12), 
+               select.col = list(contrib = 95), geom=&quot;text&quot;) +
+  theme_minimal()
+</code></pre></div>
+ - Remove labels and add cluster centers</p>
+<p>3D hierarchical clustering of the principal components.</p>
+<div class="highlight"><pre><span></span><code>plot(res.hcpc, choice =&quot;3D.map&quot;, draw.tree = FALSE,
+     ind.names = FALSE, centers.plot = TRUE, title=&#39;Hierarchical clustering of the Principal Components&#39;)
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; The authors; 2017-
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="../../../js/details.js"></script>
+      
+    
+  </body>
+</html>

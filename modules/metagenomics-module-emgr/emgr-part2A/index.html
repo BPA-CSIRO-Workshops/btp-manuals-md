@@ -1,0 +1,1216 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This contains all material for Markdown version of BTP workshops.">
+      
+      
+        <meta name="author" content="Authors">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Part 2: Functional analysis of EMG genomic and transcriptomic data using R - Markdown Manuals for Bioinformatics Training Platform (BTP)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/details.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#part-2-functional-analysis-of-emg-genomic-and-transcriptomic-data-using-r" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-header__button md-logo" aria-label="Markdown Manuals for Bioinformatics Training Platform (BTP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markdown Manuals for Bioinformatics Training Platform (BTP)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part 2: Functional analysis of EMG genomic and transcriptomic data using R
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-nav__button md-logo" aria-label="Markdown Manuals for Bioinformatics Training Platform (BTP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Markdown Manuals for Bioinformatics Training Platform (BTP)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../trainers/trainers/" class="md-nav__link">
+        The Trainers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Timetable
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Timetable" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Timetable
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_introNGS/" class="md-nav__link">
+        Intro to NGS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_cancer/" class="md-nav__link">
+        Cancer Genomics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_longRead/" class="md-nav__link">
+        Long Read
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preamble/" class="md-nav__link">
+        Workshop Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Introduction to NGS Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introduction to NGS Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction to NGS Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-cli/commandline/" class="md-nav__link">
+        Introduction to Command Line
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-qc/ngs-qc/" class="md-nav__link">
+        Data Quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-mapping/alignment/" class="md-nav__link">
+        Read Alignment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-chip-seq/chip-seq/" class="md-nav__link">
+        ChIP-seq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-rna-seq/rna-seq/" class="md-nav__link">
+        RNA-Seq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-bio/biol/" class="md-nav__link">
+        NGS Biological Insight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-velvet/velvet/" class="md-nav__link">
+        de novo Genome Assembly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-denovo-canu/denovo_canu/" class="md-nav__link">
+        DeNovo Canu
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Cancer Genomics Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cancer Genomics Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Cancer Genomics Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-alignment/alignment/" class="md-nav__link">
+        Read Alignment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-snv/snv/" class="md-nav__link">
+        Single Nucleotide Variant Calling and Annotation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-cnv/cnv-tut/" class="md-nav__link">
+        Copy Number Variation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-sv/sv_tut/" class="md-nav__link">
+        Structural Variant Analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-viz/visu/" class="md-nav__link">
+        Variant Visualisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_6">
+          Somatic Mutations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Somatic Mutations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          Somatic Mutations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-somatic/01_signatures/" class="md-nav__link">
+        Assessing somatic mutational signatures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-somatic/02_intogen/" class="md-nav__link">
+        Cohort analysis for the identification of driver genes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          DeNovo Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DeNovo Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          DeNovo Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-bac/bac_asm/" class="md-nav__link">
+        Bacterial Assembly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-euk/eukaryotic_assem/" class="md-nav__link">
+        Eukaryote Assembly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-scaffolding/scaffold/" class="md-nav__link">
+        Scaffolding
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Metagenomics Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Metagenomics Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Metagenomics Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-qc/ngs-qc/" class="md-nav__link">
+        Metagenomics QC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-tax/tax/" class="md-nav__link">
+        Metagenomics Taxonomic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-vis/vis/" class="md-nav__link">
+        Metagenomics Visualisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-wga/wga/" class="md-nav__link">
+        Metagenomics WGA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-fda/fda/" class="md-nav__link">
+        Metagenomics Functional Analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gut-microbiota-disturbance-during-antibiotic-therapy-a-multi-omic-approach" class="md-nav__link">
+    Gut microbiota disturbance during antibiotic therapy: a multi-omic approach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gather-the-necessary-analysis-results-file-from-emg-portal" class="md-nav__link">
+    Gather the necessary analysis results file from EMG portal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-taxonomy-who-is-there-and-in-what-proportion_" class="md-nav__link">
+    1. Taxonomy: who is there and in what proportion?_
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-function-who-does-what-in-what-relative-proportion" class="md-nav__link">
+    2. Function: who does what, in what relative proportion?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="part-2-functional-analysis-of-emg-genomic-and-transcriptomic-data-using-r">Part 2: Functional analysis of EMG genomic and transcriptomic data using R<a class="headerlink" href="#part-2-functional-analysis-of-emg-genomic-and-transcriptomic-data-using-r" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="gut-microbiota-disturbance-during-antibiotic-therapy-a-multi-omic-approach">Gut microbiota disturbance during antibiotic therapy: a multi-omic approach<a class="headerlink" href="#gut-microbiota-disturbance-during-antibiotic-therapy-a-multi-omic-approach" title="Permanent link">&para;</a></h2>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Antibiotic usage strongly affects microbial intestinal metabolism and thereby impacts human health. Understanding this process and the underlying mechanisms remains a major research goal. Accordingly, we conducted the first comparative omic investigation of gut microbial communities in faecal samples taken at multiple time points from an individual subjected to Beta-lactam therapy.
+<em>Perez-Cobas AE, et al. 2013 Gut 62(11), 1591-1601</em></p>
+<p>We will explore the data generated by the study above. The data is available at:
+<a href="https://www.ebi.ac.uk/metagenomics/projects/ERP001506">https://www.ebi.ac.uk/metagenomics/projects/ERP001506</a></p>
+<h3 id="gather-the-necessary-analysis-results-file-from-emg-portal">Gather the necessary analysis results file from EMG portal<a class="headerlink" href="#gather-the-necessary-analysis-results-file-from-emg-portal" title="Permanent link">&para;</a></h3>
+<p>Read in the different contigency tables.
+R provides a very versatile data structure that allows us to store various data types, namely the list.</p>
+<div class="highlight"><pre><span></span><code>analysis_files &lt;- c(&quot;BP_GO_abundances&quot;,&quot;BP_GO-slim_abundances&quot;,&quot;CC_GO_abundances&quot;,&quot;CC_GO-slim_abundances&quot;,&quot;GO_abundances&quot;,&quot;GO-slim_abundances&quot;,&quot;IPR_abundances&quot;,&quot;MF_GO_abundances&quot;,&quot;MF_GO-slim_abundances&quot;,&quot;phylum_taxonomy_abundances&quot;,&quot;taxonomy_abundances&quot;)
+</code></pre></div>
+<p>Read in all the contingency tables in a list making use of the lapply function</p>
+<div class="highlight"><pre><span></span><code>baseanalysis = &quot;https://www.ebi.ac.uk/metagenomics/projects/ERP001506/download/2.0/export?contentType=text&amp;exportValue=&quot;
+metadata &lt;- &quot;https://www.ebi.ac.uk/metagenomics/projects/ERP001506/overview/doExport&quot;;
+filenames &lt;- paste(baseanalysis, analysis_files, sep=&quot;&quot;)
+results &lt;- lapply(filenames,function(i){
+print(i)
+read.delim(i, header=TRUE)
+})
+metadata &lt;- tbl_df(read.csv(file=metadata))
+
+metadata &lt;- metadata %&gt;%
+filter(Release.version&gt;1) %&gt;%
+mutate(Sample.Name= gsub(&quot;Human gut metagenome, |Human gut metatranscriptome \\(mRNA\\), | after antibiotics&quot;,&quot;&quot;,Sample.Name)) %&gt;%
+mutate(Sample.Name= paste(&quot;days&quot;,gsub(&quot; days&quot;, &quot;&quot;, Sample.Name), sep=&quot;&quot;)) %&gt;%
+mutate(genomictype= ifelse(Experiment.type==&quot;metatranscriptomic&quot;, &quot;mRNA&quot;, &quot;DNA&quot;)) %&gt;%
+rename(days=Sample.Name, id=Sample.ID, datatype=Experiment.type,genomictype=genomictype) %&gt;%
+select(days,id,datatype,genomictype) %&gt;%
+mutate(id=ifelse(datatype==&quot;amplicon&quot;, paste(id, &quot;_A&quot;, sep=&quot;&quot;), ifelse(datatype==&quot;metatranscriptomic&quot;, paste(id,&quot;_T&quot;, sep=&quot;&quot;), paste(id, &quot;_G&quot;, sep=&quot;&quot;)))) %&gt;%
+mutate(datatype=str_to_title(datatype))
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+</div>
+<p>How can we access elements in the list?</p>
+<p><div class="highlight"><pre><span></span><code>attributes(results)
+</code></pre></div>
+This approach enables us to assign a name to each entry in the list for unambiguous access to different contingency tables
+<div class="highlight"><pre><span></span><code>colheader &lt;- gsub(analysis_files, pattern=&quot;-&quot;, replacement =&quot;_&quot;)
+names(results) &lt;- colheader
+attributes(results)
+</code></pre></div>
+Let&rsquo;s have a look at results object</p>
+<div class="highlight"><pre><span></span><code>str(results, list.len=4)
+</code></pre></div>
+<p>Each entry in the list can now be accessed by name. Give each row an explicit name before manipulating the table contents with dplyr functions. The main advantage of tbl_df (return a dataframe from a dataframe) is that it only displays a few rows and all the columns fit on the current screen, with the rest of the data displayed as text. We will be making extensive use of the dplyr package, which allows operations to be chained (&ldquo;%&gt;%&rdquo;); it is analogous to the linux pipe command (|), see here for more details: <a href="https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html">https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html</a>  </p>
+<h3 id="1-taxonomy-who-is-there-and-in-what-proportion_">1. Taxonomy: who is there and in what proportion?_<a class="headerlink" href="#1-taxonomy-who-is-there-and-in-what-proportion_" title="Permanent link">&para;</a></h3>
+<p>We can optimise the display of the first few columns or so&hellip;</p>
+<p><div class="highlight"><pre><span></span><code>taxonomy &lt;- tbl_df(results$phylum_taxonomy_abundances)
+taxonomy &lt;- taxonomy %&gt;% mutate(phylum=as.character(phylum))
+tax_g &lt;- taxonomy %&gt;%
+select(matches(&quot;_G|um&quot;)) %&gt;%
+mutate(DataType=&quot;Metagenomics&quot;)
+tax_t &lt;- taxonomy %&gt;%
+select(matches(&quot;_T|um&quot;)) %&gt;%
+mutate(DataType=&quot;Metatranscriptomics&quot;)
+tax_a &lt;- taxonomy %&gt;%
+select(matches(&quot;_A|um&quot;)) %&gt;%
+mutate(DataType=&quot;Amplicon&quot;)
+
+renameSample &lt;- function(metadata=metadata, localdf=localdf){
+strippedcol &lt;- colnames(localdf)
+for (i in 1:nrow(metadata)){
+strippedcol[which(strippedcol==as.character(metadata[i,2]))] &lt;- as.character(metadata[i,1])
+}
+return(strippedcol)
+}
+
+colnames(tax_g) &lt;- renameSample(metadata=metadata, localdf=tax_g)
+colnames(tax_t) &lt;- renameSample(metadata=metadata, localdf=tax_t)
+colnames(tax_a) &lt;- renameSample(metadata=metadata, localdf=tax_a)
+</code></pre></div>
+Then transform a wide contingency table into a long one for the purposes of plotting.</p>
+<p><div class="highlight"><pre><span></span><code>tax_metag &lt;- tax_g %&gt;% gather(condition, count, 3:ncol(tax_g)-1) %&gt;%
+group_by( condition) %&gt;%
+mutate(prop=count/sum(count))
+tax_metat &lt;- tax_t %&gt;% gather(condition, count, 3:ncol(tax_t)-1) %&gt;%
+group_by( condition) %&gt;%
+mutate(prop=count/sum(count))
+</code></pre></div>
+We can merge both metatranscriptomic and metagenomic relative occurrences of operational taxonomic units (OTU) per condition to visualise the community dynamic during treatment.</p>
+<p><div class="highlight"><pre><span></span><code>genomic_transcriptomics &lt;- rbind(tax_metag, tax_metat)
+</code></pre></div>
+Bar plot of relative abundance of species
+<div class="highlight"><pre><span></span><code>genomic_transcriptomics %&gt;% arrange(desc(prop)) %&gt;%
+ggplot( aes(x=condition, y=prop,fill=phylum)) +
+geom_bar(stat=&#39;identity&#39;, position=&#39;fill&#39;, aes(fill = phylum)) +
+facet_grid(~DataType) +
+ggtitle(&#39;Species abundance through treatment per datatype&#39;) +
+ylab(&#39;proportion abundance&#39;) +
+theme_light() + theme(axis.text.x=element_text(angle=45, hjust=1)) +
+coord_flip()
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+</div>
+<p>What conclusion would you draw from this distribution?</p>
+<p>The heatmap is of absolute Species counts per datatypes</p>
+<div class="highlight"><pre><span></span><code>genomic_transcriptomics %&gt;%
+ggplot( aes(x=condition,y=phylum))+ facet_grid(~DataType) +
+geom_tile(aes(fill=count)) + scale_fill_gradient(low=&quot;white&quot;, high=&quot;darkblue&quot;) +
+xlab(&quot;&quot;) + ylab(&quot;&quot;) + theme(axis.text.x=element_text(angle=45, hjust=1))
+</code></pre></div>
+<h3 id="2-function-who-does-what-in-what-relative-proportion">2. Function: who does what, in what relative proportion?<a class="headerlink" href="#2-function-who-does-what-in-what-relative-proportion" title="Permanent link">&para;</a></h3>
+<p>Recall the various functional annotations in the created list.</p>
+<div class="highlight"><pre><span></span><code>attributes(results)
+</code></pre></div>
+<p>As an initial exploration, we will focus on a broad GO annotation (GO-slim)</p>
+<p>** (A) GO Biological processes**: relative occurrence during treatment</p>
+<div class="highlight"><pre><span></span><code>bp_slim &lt;- tbl_df(results$BP_GO_slim_abundances)
+bp_slim &lt;- bp_slim %&gt;% mutate(description=as.character(description))
+bp_slim_g &lt;- bp_slim %&gt;%
+select(matches(&quot;_G|description&quot;)) %&gt;%
+mutate(DataType=&quot;Metagenomics&quot;)
+bp_slim_t &lt;- bp_slim %&gt;%
+select(matches(&quot;_T|description&quot;)) %&gt;%
+mutate(DataType=&quot;Metatranscriptomics&quot;)
+bp_slim_a &lt;- bp_slim %&gt;%
+select(matches(&quot;_A|description&quot;)) %&gt;%
+mutate(DataType=&quot;Amplicon&quot;)
+</code></pre></div>
+<p>Give meaningful names to conditions, as for the taxonomic case above.</p>
+<div class="highlight"><pre><span></span><code>colnames(bp_slim_g) &lt;- renameSample(metadata=metadata, localdf=bp_slim_g)
+colnames(bp_slim_t) &lt;- renameSample(metadata=metadata, localdf=bp_slim_t)
+colnames(bp_slim_a) &lt;- renameSample(metadata=metadata, localdf=bp_slim_a)
+bp_slim_metagenomics &lt;- bp_slim_g %&gt;%
+gather(condition, count, 3:ncol(bp_slim_g)-1) %&gt;%
+group_by( condition) %&gt;%
+mutate(prop=count/sum(count))
+
+bp_slim_metatransciptomics &lt;- bp_slim_t %&gt;%
+gather(condition, count, 3:ncol(bp_slim_t)-1) %&gt;%
+group_by( condition) %&gt;%
+mutate(prop=count/sum(count))
+</code></pre></div>
+<p>Merge both metatranscriptomic and metagenomic relative occurences of biological process terms per condition to visualise the relative abundance of biological process terms that are dynamic during treatment.</p>
+<p><div class="highlight"><pre><span></span><code>bp_genomic_transcriptomics &lt;- rbind(bp_slim_metagenomics, bp_slim_metatransciptomics)
+</code></pre></div>
+Bar plot of relative abundance of Biological Processes</p>
+<div class="highlight"><pre><span></span><code>bp_genomic_transcriptomics %&gt;% arrange(desc(prop)) %&gt;%
+ggplot( aes(x=condition, y=prop,fill=description)) +
+geom_bar(stat=&#39;identity&#39;, position=&#39;fill&#39;, aes(fill = description)) +
+facet_wrap(~DataType, ncol=1) +
+ggtitle(&#39;Biological processess relative abundance through \n treatment per datatype&#39;) +
+ylab(&#39;proportion abundance&#39;) +
+theme_light() + theme(axis.text.x=element_text(angle=45, hjust=1)) + coord_flip() +
+theme(legend.position=&quot;none&quot;)
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+</div>
+<p>What can you conclude from this plot?</p>
+<p>Heat map of absolute biological process counts per datatype</p>
+<p><div class="highlight"><pre><span></span><code>bp_genomic_transcriptomics %&gt;%
+ggplot( aes(x=condition,y=description))+ facet_grid(~DataType) +
+geom_tile(aes(fill=count)) + scale_fill_gradient(low=&quot;white&quot;, high=&quot;darkblue&quot;) +
+xlab(&quot;&quot;) + ylab(&quot;&quot;) + theme(axis.text.x=element_text(angle=45, hjust=1))
+</code></pre></div>
+<em>Heat map of biological process proportions per datatype</em>
+<div class="highlight"><pre><span></span><code>bp_genomic_transcriptomics %&gt;%
+ggplot( aes(x=condition,y=description))+ facet_grid(~DataType) +
+geom_tile(aes(fill=prop)) + scale_fill_gradient(low=&quot;white&quot;, high=&quot;darkblue&quot;) +
+xlab(&quot;&quot;) + ylab(&quot;&quot;) + theme(axis.text.x=element_text(angle=45, hjust=1))
+</code></pre></div>
+<strong>(B) GO Cellular Compartment</strong>: relative occurence during treatment
+<div class="highlight"><pre><span></span><code>cc_slim &lt;- tbl_df(results$CC_GO_slim_abundances)
+cc_slim &lt;- cc_slim %&gt;% mutate(description=as.character(description))
+cc_slim_g &lt;- cc_slim %&gt;%
+select(matches(&quot;_G|description&quot;)) %&gt;%
+mutate(DataType=&quot;Metagenomics&quot;)
+cc_slim_t &lt;- cc_slim %&gt;%
+select(matches(&quot;_T|description&quot;)) %&gt;%
+mutate(DataType=&quot;Metatranscriptomics&quot;)
+cc_slim_a &lt;- cc_slim %&gt;%
+select(matches(&quot;_A|description&quot;)) %&gt;%
+mutate(DataType=&quot;Amplicon&quot;)
+</code></pre></div>
+Give meaningful names to conditions as for the taxonomic case above</p>
+<p><div class="highlight"><pre><span></span><code>colnames(cc_slim_g) &lt;- renameSample(metadata=metadata, localdf=cc_slim_g)
+colnames(cc_slim_t) &lt;- renameSample(metadata=metadata, localdf=cc_slim_t)
+colnames(cc_slim_a) &lt;- renameSample(metadata=metadata, localdf=cc_slim_a)
+</code></pre></div>
+Calculate the relative occurrence of cellular compartments per day of treatment for both metagenomic and transcriptomic data types.
+<div class="highlight"><pre><span></span><code>cc_slim_metagenomics &lt;- cc_slim_g %&gt;%
+gather(condition, count, 3:ncol(cc_slim_g)-1) %&gt;%
+group_by( condition) %&gt;%
+mutate(prop=count/sum(count))
+
+cc_slim_metatransciptomics &lt;- cc_slim_t %&gt;%
+gather(condition, count, 3:ncol(cc_slim_t)-1) %&gt;%
+group_by( condition) %&gt;%
+mutate(prop=count/sum(count))
+</code></pre></div>
+Merge both metatranscriptomic and metagenomic relative occurrences of biological processes per condition to visualise the relative abundance of biological process terms that are dynamic during treatment.</p>
+<div class="highlight"><pre><span></span><code>cc_genomic_transcriptomics &lt;- rbind(cc_slim_metagenomics, cc_slim_metatransciptomics)
+</code></pre></div>
+<p>Bar plot of relative abundances of cellular compartment</p>
+<div class="highlight"><pre><span></span><code>cc_genomic_transcriptomics %&gt;% arrange(desc(prop)) %&gt;%
+ggplot( aes(x=condition, y=prop,fill=description)) +
+geom_bar(stat=&#39;identity&#39;, position=&#39;fill&#39;, aes(fill = description)) +
+facet_wrap(~DataType, ncol=1) +
+ggtitle(&#39;Cellular compartment relative abundance through \n
+treatment per datatype&#39;) +
+ylab(&#39;proportion abundance&#39;) + theme_light() +
+theme(axis.text.x=element_text(angle=45, hjust=1)) +
+coord_flip() + theme(legend.position=&quot;none&quot;)
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+</div>
+<p>What can you conclude from this plot?</p>
+<p>Heat map of absolute cellular compartment term counts per datatype</p>
+<div class="highlight"><pre><span></span><code>cc_genomic_transcriptomics %&gt;%
+ggplot( aes(x=condition,y=description))+ facet_grid(~DataType) +
+geom_tile(aes(fill=count)) + scale_fill_gradient(low=&quot;white&quot;, high=&quot;darkblue&quot;) +
+xlab(&quot;&quot;) + ylab(&quot;&quot;) + theme(axis.text.x=element_text(angle=45, hjust=1))
+</code></pre></div>
+<p>Heat map of Cellular compartment term proportions per datatype</p>
+<div class="highlight"><pre><span></span><code>cc_genomic_transcriptomics %&gt;%
+ggplot( aes(x=condition,y=description))+ facet_grid(~DataType) +
+geom_tile(aes(fill=prop)) + scale_fill_gradient(low=&quot;white&quot;, high=&quot;darkblue&quot;) +
+xlab(&quot;&quot;) + ylab(&quot;&quot;) + theme(axis.text.x=element_text(angle=45, hjust=1))
+</code></pre></div>
+<p><strong>(C) GO Molecular function</strong>: relative occurence during treatment</p>
+<p>Extract the data from the data structure &ldquo;results&rdquo; created earlier.</p>
+<div class="highlight"><pre><span></span><code>mf_slim &lt;- tbl_df(results$MF_GO_slim_abundances)
+mf_slim &lt;- mf_slim %&gt;% mutate(description=as.character(description))
+mf_slim_g &lt;- mf_slim %&gt;% 
+            select(matches(&quot;_G|description&quot;)) %&gt;% 
+            mutate(DataType=&quot;Metagenomics&quot;)
+mf_slim_t &lt;- mf_slim %&gt;% 
+            select(matches(&quot;_T|description&quot;)) %&gt;% 
+            mutate(DataType=&quot;Metatranscriptomics&quot;) 
+mf_slim_a &lt;- mf_slim %&gt;% 
+            select(matches(&quot;_A|description&quot;))  %&gt;% 
+            mutate(DataType=&quot;Amplicon&quot;)
+</code></pre></div>
+<p>Give meaningful names to conditions as for the taxonomic case above</p>
+<div class="highlight"><pre><span></span><code>colnames(mf_slim_g) &lt;- renameSample(metadata=metadata, localdf=mf_slim_g)
+colnames(mf_slim_t) &lt;- renameSample(metadata=metadata, localdf=mf_slim_t)
+colnames(mf_slim_a) &lt;- renameSample(metadata=metadata, localdf=mf_slim_a)
+
+mf_slim_metagenomics &lt;- mf_slim_g %&gt;% 
+                        gather(condition, count, 3:ncol(mf_slim_g)-1) %&gt;%
+                        group_by( condition) %&gt;% 
+                        mutate(prop=count/sum(count))
+
+mf_slim_metatransciptomics &lt;- mf_slim_t %&gt;% 
+                              gather(condition, count, 3:ncol(mf_slim_t)-1) %&gt;%
+                              group_by( condition) %&gt;%
+                              mutate(prop=count/sum(count))
+</code></pre></div>
+<p>Merge both metatranscriptomic and metagenomic relative occurrences of biological processes per condition to visualise the relative abundances of biological process terms that are dynamic during treatment.  </p>
+<div class="highlight"><pre><span></span><code>mf_genomic_transcriptomics &lt;- rbind(mf_slim_metagenomics, mf_slim_metatransciptomics)
+</code></pre></div>
+<p>Barplot of relative abundance Molecular function</p>
+<p><div class="highlight"><pre><span></span><code>mf_genomic_transcriptomics %&gt;% arrange(desc(prop)) %&gt;%
+ggplot( aes(x=condition, y=prop,fill=description)) +
+geom_bar(stat=&#39;identity&#39;, position=&#39;fill&#39;, aes(fill = description)) +
+facet_wrap(~DataType, ncol=1) +
+ggtitle(&#39;Molecular function relative abundance through
+\n treatment per datatype&#39;) +
+ylab(&#39;proportion abundance&#39;) +
+theme_light() +
+theme(axis.text.x=element_text(angle=45, hjust=1)) +
+coord_flip() +
+theme(legend.position=&quot;none&quot;)# + guides(fill=guide_legend(ncol=2))
+</code></pre></div>
+Heatmap of Absolute Molecular Function term counts through treatment</p>
+<p><div class="highlight"><pre><span></span><code>mf_genomic_transcriptomics %&gt;%
+ggplot( aes(x=condition,y=description))+
+geom_tile(aes(fill=count)) + scale_fill_gradient(low=&quot;white&quot;, high=&quot;darkblue&quot;) +
+xlab(&quot;&quot;) + ylab(&quot;&quot;) + theme(axis.text.x=element_text(angle=45, hjust=1))
+</code></pre></div>
+Heat map of relative occurrence of molecular function term counts throughout treatment</p>
+<div class="highlight"><pre><span></span><code>mf_genomic_transcriptomics %&gt;%
+ggplot( aes(x=condition,y=description))+
+geom_tile(aes(fill=prop)) + scale_fill_gradient(low=&quot;white&quot;, high=&quot;darkblue&quot;) +
+xlab(&quot;&quot;) + ylab(&quot;&quot;) + theme(axis.text.x=element_text(angle=45, hjust=1))
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+</div>
+<p>What can you conclude from this plot?</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; The authors; 2017-
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="../../../js/details.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,22 +1,25 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="This contains all material for Markdown version of BTP workshops.">
-      
       
       
         <meta name="author" content="Authors">
       
       
-        <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
+        <link rel="prev" href="../../btp-module-ngs-mapping/alignment/">
+      
+      
+        <link rel="next" href="../../btp-module-rna-seq/rna-seq/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -24,89 +27,119 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr-1df76c4e58.js"></script>
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/application-769c285a91.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-02c2a4388f.palette.css">
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
+      
+
+    
     
     
       
         
         
-        
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
       <link rel="stylesheet" href="../../../css/details.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
     
     
   </head>
   
   
-  
-  
-    <body data-md-color-primary="indigo" data-md-color-accent="light-blue">
-  
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
         
-          <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-logo md-header-nav__button">
-            <img src="../../../media/logos/bpalogo.png" width="24" height="24">
-          </a>
-        
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <span class="md-flex__ellipsis md-header-nav__title">
-          
+        <a href="#key-learning-outcomes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-header__button md-logo" aria-label="Markdown Manuals for Bioinformatics Training Platform (BTP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markdown Manuals for Bioinformatics Training Platform (BTP)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
-              
-                <span class="md-header-nav__parent">
-                  Introduction to NGS Modules
-                </span>
-              
+              ChIP-seq
             
-            ChIP-seq
-          
-        </span>
+          </span>
+        </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-          
-<div class="md-search" data-md-component="search">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner">
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
-            Type to start searching
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -114,121 +147,38 @@
     </div>
   </div>
 </div>
-        
-      </div>
-      
-    </div>
+    
+    
   </nav>
+  
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
       
         
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="../../.." title="Home" class="md-tabs__link">
-        Home
-      </a>
-    
-  </li>
-
-      
+          
         
       
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../../timetables/timetable_introNGS/" title="Timetable" class="md-tabs__link">
-          Timetable
-        </a>
-      
-    </li>
-  
-
-      
-        
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../btp-module-ngs-cli/commandline/" title="Introduction to NGS Modules" class="md-tabs__link md-tabs__link--active">
-          Introduction to NGS Modules
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../cancer-module-alignment/alignment/" title="Cancer Genomics Modules" class="md-tabs__link">
-          Cancer Genomics Modules
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../denovo-module-bac/bac_asm/" title="DeNovo Modules" class="md-tabs__link">
-          DeNovo Modules
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../metagenomics-module-qc/ngs-qc/" title="Metagenomics Modules" class="md-tabs__link">
-          Metagenomics Modules
-        </a>
-      
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-logo md-nav__button">
-        <img src="../../../media/logos/bpalogo.png">
-      </i>
-    
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-nav__button md-logo" aria-label="Markdown Manuals for Bioinformatics Training Platform (BTP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
     Markdown Manuals for Bioinformatics Training Platform (BTP)
   </label>
   
@@ -238,96 +188,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../trainers/trainers/" title="The Trainers" class="md-nav__link">
-      The Trainers
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      Timetable
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Timetable
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_introNGS/" title="Intro to NGS" class="md-nav__link">
-      Intro to NGS
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_cancer/" title="Cancer Genomics" class="md-nav__link">
-      Cancer Genomics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_longRead/" title="Long Read" class="md-nav__link">
-      Long Read
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../preamble/" title="Workshop Information" class="md-nav__link">
-      Workshop Information
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
 
     
       
@@ -335,110 +204,238 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
-    
-    <label class="md-nav__link" for="nav-5">
-      Introduction to NGS Modules
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Introduction to NGS Modules
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-ngs-cli/commandline/" title="Introduction to Command Line" class="md-nav__link">
-      Introduction to Command Line
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-ngs-qc/ngs-qc/" title="Data Quality" class="md-nav__link">
-      Data Quality
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-ngs-mapping/alignment/" title="Read Alignment" class="md-nav__link">
-      Read Alignment
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../trainers/trainers/" class="md-nav__link">
+        The Trainers
+      </a>
+    </li>
   
 
+    
+      
+      
+      
 
-  <li class="md-nav__item md-nav__item--active">
+  
+  
+  
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Timetable
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Timetable" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Timetable
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_introNGS/" class="md-nav__link">
+        Intro to NGS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_cancer/" class="md-nav__link">
+        Cancer Genomics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_longRead/" class="md-nav__link">
+        Long Read
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preamble/" class="md-nav__link">
+        Workshop Information
+      </a>
+    </li>
+  
+
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Introduction to NGS Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introduction to NGS Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction to NGS Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-cli/commandline/" class="md-nav__link">
+        Introduction to Command Line
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-qc/ngs-qc/" class="md-nav__link">
+        Data Quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-mapping/alignment/" class="md-nav__link">
+        Read Alignment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ChIP-seq
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ChIP-seq
-      </label>
-    
-    <a href="./" title="ChIP-seq" class="md-nav__link md-nav__link--active">
-      ChIP-seq
-    </a>
-    
+      </a>
       
-<nav class="md-nav md-nav--secondary">
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-learning-outcomes" title="Key Learning Outcomes" class="md-nav__link">
+  <a href="#key-learning-outcomes" class="md-nav__link">
     Key Learning Outcomes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources-youll-be-using" title="Resources You’ll be Using" class="md-nav__link">
+  <a href="#resources-youll-be-using" class="md-nav__link">
     Resources You’ll be Using
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Resources You’ll be Using">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tools-used" title="Tools Used" class="md-nav__link">
+  <a href="#tools-used" class="md-nav__link">
     Tools Used
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sources-of-data" title="Sources of Data" class="md-nav__link">
+  <a href="#sources-of-data" class="md-nav__link">
     Sources of Data
   </a>
   
@@ -450,50 +447,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#author-information" title="Author Information" class="md-nav__link">
+  <a href="#author-information" class="md-nav__link">
     Author Information
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-environment" title="Prepare the Environment" class="md-nav__link">
+  <a href="#prepare-the-environment" class="md-nav__link">
     Prepare the Environment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#finding-enriched-areas-using-spp" title="Finding enriched areas using SPP" class="md-nav__link">
+  <a href="#finding-enriched-areas-using-spp" class="md-nav__link">
     Finding enriched areas using SPP
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Finding enriched areas using SPP">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-loading-data-and-quality-filter-the-informative-tags" title="STEP 1. Loading data and quality filter the informative tags" class="md-nav__link">
+  <a href="#step-1-loading-data-and-quality-filter-the-informative-tags" class="md-nav__link">
     STEP 1. Loading data and quality filter the informative tags
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-calculating-genome-wide-tag-density-and-tag-enrichmentdepletion-profiles" title="STEP 2. Calculating genome-wide tag density and tag enrichment/depletion profiles" class="md-nav__link">
+  <a href="#step-2-calculating-genome-wide-tag-density-and-tag-enrichmentdepletion-profiles" class="md-nav__link">
     STEP 2. Calculating genome-wide tag density and tag enrichment/depletion profiles
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-comparing-binding-sites-to-annotations-using-the-biomart-package" title="STEP 3. Comparing Binding Sites to Annotations Using the biomaRt package" class="md-nav__link">
+  <a href="#step-3-comparing-binding-sites-to-annotations-using-the-biomart-package" class="md-nav__link">
     STEP 3. Comparing Binding Sites to Annotations Using the biomaRt package
   </a>
   
@@ -505,36 +502,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-results-with-the-genome-browser" title="Viewing results with the Genome browser" class="md-nav__link">
+  <a href="#viewing-results-with-the-genome-browser" class="md-nav__link">
     Viewing results with the Genome browser
   </a>
+  
+    <nav class="md-nav" aria-label="Viewing results with the Genome browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advanced-session" class="md-nav__link">
+    Advanced Session
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#motif-analysis" title="Motif analysis" class="md-nav__link">
+  <a href="#motif-analysis" class="md-nav__link">
     Motif analysis
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Motif analysis">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#motif-discovery-with-trawler" title="Motif discovery with Trawler" class="md-nav__link">
+  <a href="#motif-discovery-with-trawler" class="md-nav__link">
     Motif discovery with Trawler
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#optional-motif-discovery-with-rsat-peak-motif" title="Optional: Motif discovery with RSAT peak-motif" class="md-nav__link">
+  <a href="#optional-motif-discovery-with-rsat-peak-motif" class="md-nav__link">
     Optional: Motif discovery with RSAT peak-motif
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#optional-motif-discovery-with-meme-chip" title="Optional: Motif discovery with MEME-ChIP" class="md-nav__link">
+  <a href="#optional-motif-discovery-with-meme-chip" class="md-nav__link">
     Optional: Motif discovery with MEME-ChIP
   </a>
   
@@ -546,348 +556,426 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" title="Reference" class="md-nav__link">
+  <a href="#reference" class="md-nav__link">
     Reference
   </a>
   
 </li>
       
-      
-      
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-rna-seq/rna-seq/" class="md-nav__link">
+        RNA-Seq
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-bio/biol/" class="md-nav__link">
+        NGS Biological Insight
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-velvet/velvet/" class="md-nav__link">
+        de novo Genome Assembly
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-rna-seq/rna-seq/" title="RNA-Seq" class="md-nav__link">
-      RNA-Seq
-    </a>
-  </li>
-
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-denovo-canu/denovo_canu/" class="md-nav__link">
+        DeNovo Canu
+      </a>
+    </li>
+  
+
+            
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-ngs-bio/biol/" title="NGS Biological Insight" class="md-nav__link">
-      NGS Biological Insight
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-velvet/velvet/" title="de novo Genome Assembly" class="md-nav__link">
-      de novo Genome Assembly
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-denovo-canu/denovo_canu/" title="DeNovo Canu" class="md-nav__link">
-      DeNovo Canu
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Cancer Genomics Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cancer Genomics Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Cancer Genomics Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-alignment/alignment/" class="md-nav__link">
+        Read Alignment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-snv/snv/" class="md-nav__link">
+        Single Nucleotide Variant Calling and Annotation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-cnv/cnv-tut/" class="md-nav__link">
+        Copy Number Variation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-sv/sv_tut/" class="md-nav__link">
+        Structural Variant Analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-viz/visu/" class="md-nav__link">
+        Variant Visualisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
-    <label class="md-nav__link" for="nav-6">
-      Cancer Genomics Modules
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Cancer Genomics Modules
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_6">
+          Somatic Mutations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Somatic Mutations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          Somatic Mutations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-somatic/01_signatures/" class="md-nav__link">
+        Assessing somatic mutational signatures
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-somatic/02_intogen/" class="md-nav__link">
+        Cohort analysis for the identification of driver genes
+      </a>
+    </li>
+  
+
+            
           
+        </ul>
+      </nav>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-alignment/alignment/" title="Read Alignment" class="md-nav__link">
-      Read Alignment
-    </a>
-  </li>
-
-        
+            
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-snv/snv/" title="Single Nucleotide Variant Calling and Annotation" class="md-nav__link">
-      Single Nucleotide Variant Calling and Annotation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-cnv/cnv-tut/" title="Copy Number Variation" class="md-nav__link">
-      Copy Number Variation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-sv/sv_tut/" title="Structural Variant Analysis" class="md-nav__link">
-      Structural Variant Analysis
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-viz/visu/" title="Variant Visualisation" class="md-nav__link">
-      Variant Visualisation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
-    
-    <label class="md-nav__link" for="nav-6-6">
-      Somatic Mutations
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-6">
-        Somatic Mutations
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-somatic/01_signatures/" title="Assessing somatic mutational signatures" class="md-nav__link">
-      Assessing somatic mutational signatures
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-somatic/02_intogen/" title="Cohort analysis for the identification of driver genes" class="md-nav__link">
-      Cohort analysis for the identification of driver genes
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      DeNovo Modules
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        DeNovo Modules
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          DeNovo Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DeNovo Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          DeNovo Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-bac/bac_asm/" class="md-nav__link">
+        Bacterial Assembly
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-euk/eukaryotic_assem/" class="md-nav__link">
+        Eukaryote Assembly
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-scaffolding/scaffold/" class="md-nav__link">
+        Scaffolding
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../denovo-module-bac/bac_asm/" title="Bacterial Assembly" class="md-nav__link">
-      Bacterial Assembly
-    </a>
-  </li>
-
-        
+            
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../denovo-module-euk/eukaryotic_assem/" title="Eukaryote Assembly" class="md-nav__link">
-      Eukaryote Assembly
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../denovo-module-scaffolding/scaffold/" title="Scaffolding" class="md-nav__link">
-      Scaffolding
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      Metagenomics Modules
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        Metagenomics Modules
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Metagenomics Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Metagenomics Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Metagenomics Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-qc/ngs-qc/" class="md-nav__link">
+        Metagenomics QC
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-tax/tax/" class="md-nav__link">
+        Metagenomics Taxonomic
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-vis/vis/" class="md-nav__link">
+        Metagenomics Visualisation
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-qc/ngs-qc/" title="Metagenomics QC" class="md-nav__link">
-      Metagenomics QC
-    </a>
-  </li>
-
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-wga/wga/" class="md-nav__link">
+        Metagenomics WGA
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-fda/fda/" class="md-nav__link">
+        Metagenomics Functional Analysis
+      </a>
+    </li>
+  
+
+            
           
-
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-tax/tax/" title="Metagenomics Taxonomic" class="md-nav__link">
-      Metagenomics Taxonomic
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-vis/vis/" title="Metagenomics Visualisation" class="md-nav__link">
-      Metagenomics Visualisation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-wga/wga/" title="Metagenomics WGA" class="md-nav__link">
-      Metagenomics WGA
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-fda/fda/" title="Metagenomics Functional Analysis" class="md-nav__link">
-      Metagenomics Functional Analysis
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -897,41 +985,47 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-learning-outcomes" title="Key Learning Outcomes" class="md-nav__link">
+  <a href="#key-learning-outcomes" class="md-nav__link">
     Key Learning Outcomes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources-youll-be-using" title="Resources You’ll be Using" class="md-nav__link">
+  <a href="#resources-youll-be-using" class="md-nav__link">
     Resources You’ll be Using
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Resources You’ll be Using">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tools-used" title="Tools Used" class="md-nav__link">
+  <a href="#tools-used" class="md-nav__link">
     Tools Used
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sources-of-data" title="Sources of Data" class="md-nav__link">
+  <a href="#sources-of-data" class="md-nav__link">
     Sources of Data
   </a>
   
@@ -943,50 +1037,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#author-information" title="Author Information" class="md-nav__link">
+  <a href="#author-information" class="md-nav__link">
     Author Information
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-environment" title="Prepare the Environment" class="md-nav__link">
+  <a href="#prepare-the-environment" class="md-nav__link">
     Prepare the Environment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#finding-enriched-areas-using-spp" title="Finding enriched areas using SPP" class="md-nav__link">
+  <a href="#finding-enriched-areas-using-spp" class="md-nav__link">
     Finding enriched areas using SPP
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Finding enriched areas using SPP">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-loading-data-and-quality-filter-the-informative-tags" title="STEP 1. Loading data and quality filter the informative tags" class="md-nav__link">
+  <a href="#step-1-loading-data-and-quality-filter-the-informative-tags" class="md-nav__link">
     STEP 1. Loading data and quality filter the informative tags
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-calculating-genome-wide-tag-density-and-tag-enrichmentdepletion-profiles" title="STEP 2. Calculating genome-wide tag density and tag enrichment/depletion profiles" class="md-nav__link">
+  <a href="#step-2-calculating-genome-wide-tag-density-and-tag-enrichmentdepletion-profiles" class="md-nav__link">
     STEP 2. Calculating genome-wide tag density and tag enrichment/depletion profiles
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-comparing-binding-sites-to-annotations-using-the-biomart-package" title="STEP 3. Comparing Binding Sites to Annotations Using the biomaRt package" class="md-nav__link">
+  <a href="#step-3-comparing-binding-sites-to-annotations-using-the-biomart-package" class="md-nav__link">
     STEP 3. Comparing Binding Sites to Annotations Using the biomaRt package
   </a>
   
@@ -998,36 +1092,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-results-with-the-genome-browser" title="Viewing results with the Genome browser" class="md-nav__link">
+  <a href="#viewing-results-with-the-genome-browser" class="md-nav__link">
     Viewing results with the Genome browser
   </a>
+  
+    <nav class="md-nav" aria-label="Viewing results with the Genome browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advanced-session" class="md-nav__link">
+    Advanced Session
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#motif-analysis" title="Motif analysis" class="md-nav__link">
+  <a href="#motif-analysis" class="md-nav__link">
     Motif analysis
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Motif analysis">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#motif-discovery-with-trawler" title="Motif discovery with Trawler" class="md-nav__link">
+  <a href="#motif-discovery-with-trawler" class="md-nav__link">
     Motif discovery with Trawler
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#optional-motif-discovery-with-rsat-peak-motif" title="Optional: Motif discovery with RSAT peak-motif" class="md-nav__link">
+  <a href="#optional-motif-discovery-with-rsat-peak-motif" class="md-nav__link">
     Optional: Motif discovery with RSAT peak-motif
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#optional-motif-discovery-with-meme-chip" title="Optional: Motif discovery with MEME-ChIP" class="md-nav__link">
+  <a href="#optional-motif-discovery-with-meme-chip" class="md-nav__link">
     Optional: Motif discovery with MEME-ChIP
   </a>
   
@@ -1039,13 +1146,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" title="Reference" class="md-nav__link">
+  <a href="#reference" class="md-nav__link">
     Reference
   </a>
   
 </li>
-      
-      
       
     </ul>
   
@@ -1055,14 +1160,17 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                
-                  <h1>ChIP-seq</h1>
-                
-                <h2 id="key-learning-outcomes">Key Learning Outcomes<a class="headerlink" href="#key-learning-outcomes" title="Permanent link">&para;</a></h2>
+                  
+
+
+
+  <h1>ChIP-seq</h1>
+
+<h2 id="key-learning-outcomes">Key Learning Outcomes<a class="headerlink" href="#key-learning-outcomes" title="Permanent link">&para;</a></h2>
 <p>After completing this practical the trainee should be able to:</p>
 <ul>
 <li>
@@ -1117,36 +1225,35 @@ using SPP. We will visualize the identified regions in a genome browser
 and perform functional annotation and motif analysis on the predicted
 binding regions.</p>
 <h2 id="prepare-the-environment">Prepare the Environment<a class="headerlink" href="#prepare-the-environment" title="Permanent link">&para;</a></h2>
-<p>The material for this practical can be found in the <code class="codehilite">ChIPseq</code> directory
+<p>The material for this practical can be found in the <code>ChIPseq</code> directory
 on your desktop. Please make sure that this directory also contains the
 SAM/BAM files you produced during the alignment practical.</p>
-<p>If you didn’t have time to align the control file called <code class="codehilite">gfp.fastq</code>
+<p>If you didn’t have time to align the control file called <code>gfp.fastq</code>
 during the alignment practical, please do it now. Follow the same steps,
-from the bowtie alignment step, as for the <code class="codehilite">Oct4.fastq</code> file.</p>
+from the bowtie alignment step, as for the <code>Oct4.fastq</code> file.</p>
 <p>In ChIP-seq analysis (unlike in other applications such as RNA-seq) it
 can be useful to exclude all reads that map to more than one location in
-the genome. When using Bowtie, this can be done using the <code class="codehilite">-m 1</code> option,
-which tells it to report only unique matches (See <code class="codehilite">bowtie –help</code> for
+the genome. When using Bowtie, this can be done using the <code>-m 1</code> option,
+which tells it to report only unique matches (See <code>bowtie –help</code> for
 more details).</p>
-<p>Open the Terminal and go to the <code class="codehilite">chipseq</code> directory:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd /home/trainee/chipseq
+<p>Open the Terminal and go to the <code>chipseq</code> directory:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>cd /home/trainee/chipseq
 ls
 R
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <h2 id="finding-enriched-areas-using-spp">Finding enriched areas using SPP<a class="headerlink" href="#finding-enriched-areas-using-spp" title="Permanent link">&para;</a></h2>
 <p>Terminology used in the tutorial: </p>
 <ul>
-<li><code class="codehilite">fragment:</code> overlapping fragments
+<li><code>fragment:</code> overlapping fragments
     obtaining in the IP (immuno precipitation) experiments. </li>
-<li><code class="codehilite">tag:</code> sequenced part of the fragment which could be from one end (in case of single end
+<li><code>tag:</code> sequenced part of the fragment which could be from one end (in case of single end
     sequencing ) or both ends in the paired end data. </li>
-<li><code class="codehilite">alignment:</code> a process to determine the position of the tags, which typically should be around
+<li><code>alignment:</code> a process to determine the position of the tags, which typically should be around
     the binding site. </li>
-<li><code class="codehilite">peaks:</code> spatial distribution of the tags densities
+<li><code>peaks:</code> spatial distribution of the tags densities
     around the binding sites on the genome. You would see two separate peaks
     of tags on the positive and negative strand around the binding site. The
     distance between the two peaks should reflect the size of the protected
@@ -1167,13 +1274,12 @@ cluster parameters for simplicity. The following steps will work you
 through the SPP pipeline.</p>
 <p>In your R terminal, load spp and biomaRt packages and make sure to set
 your working directory correctly:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>library(spp);
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>library(spp);
 library(biomaRt);
 setwd(&#39;/home/trainee/chipseq&#39;);
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>The first stage in SPP are:
 1.    load input data; 
@@ -1188,11 +1294,10 @@ contain only unique reads.)</p>
 <p>First load Oct4 and gfp bam files. Here GFP are the control or input
 samples, these are usually mock IP DNA where you do not expect to see
 any binding peaks.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>oct4.data<span class="o">&lt;-</span>read.bam.tags<span class="p">(</span><span class="s">&quot;Oct4.sorted.bam&quot;</span><span class="p">);</span>
-gfp.data<span class="o">&lt;-</span>read.bam.tags<span class="p">(</span><span class="s">&quot;gfp.sorted.bam&quot;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">oct4.data</span><span class="o">&lt;-</span><span class="nf">read.bam.tags</span><span class="p">(</span><span class="s">&quot;Oct4.sorted.bam&quot;</span><span class="p">);</span>
+<span class="n">gfp.data</span><span class="o">&lt;-</span><span class="nf">read.bam.tags</span><span class="p">(</span><span class="s">&quot;gfp.sorted.bam&quot;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 
 <p>The statistical significance of tags clustering observed for a putative
 protein binding site depends on the expected background. Therefore, use
@@ -1206,13 +1311,12 @@ is done by shifting the strands relative to each other by increasing
 distance within a given range. cross-correlation of the positive and
 negative strand tag densities is plotted. The cross-correlation plot
 should show the predominant size of the protected region.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>binding.characteristics <span class="o">&lt;-</span> get.binding.characteristics<span class="p">(</span>oct4.data<span class="p">,</span>srange<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="m">500</span><span class="p">),</span>bin<span class="o">=</span><span class="m">5</span><span class="p">);</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">binding.characteristics</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get.binding.characteristics</span><span class="p">(</span><span class="n">oct4.data</span><span class="p">,</span><span class="n">srange</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="m">500</span><span class="p">),</span><span class="n">bin</span><span class="o">=</span><span class="m">5</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 
-<p>The <code class="codehilite">binding.characteristics</code> provides the estimate of the binding peak</p>
+<p>The <code>binding.characteristics</code> provides the estimate of the binding peak</p>
 <p>separation distance, cross-correlation profile itself and tag quality
-bin acceptance information. The <code class="codehilite">srange</code> parameter defines the possible
+bin acceptance information. The <code>srange</code> parameter defines the possible
 range for the size of the protected region. It is supposed to be higher
 than tag length. However, the upper boundary (500) cannot be too high,
 which will increase the running time. The bin parameter tags within the
@@ -1234,43 +1338,39 @@ dev.off();</p>
 cross correlation magnitude whereas a randonmly mapped set of tags
 should decrease it. The following calls will select tags with acceptable
 alignment quality based on the binding characteristics:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>chip.data <span class="o">&lt;-</span> select.informative.tags<span class="p">(</span>oct4.data`binding.characteristics<span class="p">);</span>
-gfpcontrol.data <span class="o">&lt;-</span> select.informative.tags<span class="p">(</span>gfp.data<span class="p">,</span>binding.characteristics<span class="p">);</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">chip.data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select.informative.tags</span><span class="p">(</span><span class="n">oct4.data</span>`<span class="n">binding.characteristics</span><span class="p">);</span>
+<span class="n">gfpcontrol.data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select.informative.tags</span><span class="p">(</span><span class="n">gfp.data</span><span class="p">,</span><span class="n">binding.characteristics</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 
 <p>The last step below will scan along the chromosomes calculating local
-density of region (can be specified using <code class="codehilite">window.size</code> parameter, default
+density of region (can be specified using <code>window.size</code> parameter, default
 is 200bp), removing or restricting singular positions with extremely
 high tag count relative to the neighborhood:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>chip.data <span class="o">&lt;-</span> remove.local.tag.anomalies<span class="p">(</span>chip.data<span class="p">);</span>
-gfpcontrol.data <span class="o">&lt;-</span> remove.local.tag.anomalies<span class="p">(</span>gfpcontrol.data<span class="p">);</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">chip.data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">remove.local.tag.anomalies</span><span class="p">(</span><span class="n">chip.data</span><span class="p">);</span>
+<span class="n">gfpcontrol.data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">remove.local.tag.anomalies</span><span class="p">(</span><span class="n">gfpcontrol.data</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 
 <h3 id="step-2-calculating-genome-wide-tag-density-and-tag-enrichmentdepletion-profiles">STEP 2. Calculating genome-wide tag density and tag enrichment/depletion profiles<a class="headerlink" href="#step-2-calculating-genome-wide-tag-density-and-tag-enrichmentdepletion-profiles" title="Permanent link">&para;</a></h3>
 <p>The following commands will calculate smoothed tag density and output it
 into a WIG file that can be read with genome browsers, such as IGV
 (Note: the tags are shifted by half of the peak separation distance):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tag.shift <span class="o">&lt;-</span> <span class="kp">round</span><span class="p">(</span>binding.characteristics<span class="o">$</span>peak<span class="o">$</span>x<span class="o">/</span><span class="m">2</span><span class="p">)</span>
-smoothed.density <span class="o">&lt;-</span> get.smoothed.tag.density<span class="p">(</span>chip.data<span class="p">,</span>control.tags<span class="o">=</span>gfpcontrol.data<span class="p">,</span>bandwidth<span class="o">=</span><span class="m">200</span><span class="p">,</span>step<span class="o">=</span><span class="m">100</span><span class="p">,</span>tag.shift<span class="o">=</span>tag.shift<span class="p">);</span>
-writewig<span class="p">(</span>smoothed.density<span class="p">,</span><span class="s">&quot;oct4.density.wig&quot;</span><span class="p">,</span><span class="s">&quot;Smoothed, background-subtracted tag density&quot;</span><span class="p">);</span>
-<span class="kp">rm</span><span class="p">(</span>smoothed.density<span class="p">);</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">tag.shift</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">binding.characteristics</span><span class="o">$</span><span class="n">peak</span><span class="o">$</span><span class="n">x</span><span class="o">/</span><span class="m">2</span><span class="p">)</span>
+<span class="n">smoothed.density</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get.smoothed.tag.density</span><span class="p">(</span><span class="n">chip.data</span><span class="p">,</span><span class="n">control.tags</span><span class="o">=</span><span class="n">gfpcontrol.data</span><span class="p">,</span><span class="n">bandwidth</span><span class="o">=</span><span class="m">200</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="n">tag.shift</span><span class="o">=</span><span class="n">tag.shift</span><span class="p">);</span>
+<span class="nf">writewig</span><span class="p">(</span><span class="n">smoothed.density</span><span class="p">,</span><span class="s">&quot;oct4.density.wig&quot;</span><span class="p">,</span><span class="s">&quot;Smoothed, background-subtracted tag density&quot;</span><span class="p">);</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">smoothed.density</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 
 <p>To provide a rough estimate of the enrichment profile (i.e. ChIP signal
 over input), we can use the get.smoothed.enrichment.mle() method:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>smoothed.enrichment.estimate <span class="o">&lt;-</span> get.smoothed.enrichment.mle<span class="p">(</span>chip.data<span class="p">,</span>gfpcontrol.data<span class="p">,</span>bandwidth<span class="o">=</span><span class="m">200</span><span class="p">,</span>step<span class="o">=</span><span class="m">100</span><span class="p">,</span>tag.shift<span class="o">=</span>tag.shift<span class="p">);</span>
-writewig<span class="p">(</span>smoothed.enrichment.estimate<span class="p">,</span><span class="s">&quot;oct4.enrichment.wig&quot;</span><span class="p">,</span><span class="s">&quot;Smoothed maximum likelihood log2 enrichment estimate&quot;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">smoothed.enrichment.estimate</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get.smoothed.enrichment.mle</span><span class="p">(</span><span class="n">chip.data</span><span class="p">,</span><span class="n">gfpcontrol.data</span><span class="p">,</span><span class="n">bandwidth</span><span class="o">=</span><span class="m">200</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="n">tag.shift</span><span class="o">=</span><span class="n">tag.shift</span><span class="p">);</span>
+<span class="nf">writewig</span><span class="p">(</span><span class="n">smoothed.enrichment.estimate</span><span class="p">,</span><span class="s">&quot;oct4.enrichment.wig&quot;</span><span class="p">,</span><span class="s">&quot;Smoothed maximum likelihood log2 enrichment estimate&quot;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 
 <p>Next, we will scan ChIP and signal tag density to estimate lower bounds
 of tag enrichment (and upper bound of tag depletion if it is
@@ -1279,26 +1379,23 @@ statistical estimates of log2 fold-enrichment ratios along the genome.
 The example below uses a window of 500bp (and background windows of 1,
 5, 25 and 50 times that size) and a confidence interval corresponding to
 1%.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>enrichment.estimates <span class="o">&lt;-</span> get.conservative.fold.enrichment.profile<span class="p">(</span>chip.data<span class="p">,</span>gfpcontrol.data<span class="p">,</span>fws<span class="o">=</span><span class="m">500</span><span class="p">,</span>step<span class="o">=</span><span class="m">100</span><span class="p">,</span>alpha<span class="o">=</span><span class="m">0.01</span><span class="p">);</span>
-writewig<span class="p">(</span>enrichment.estimates<span class="p">,</span><span class="s">&quot;oct4.Enrichment.estimates.wig&quot;</span><span class="p">,</span><span class="s">&quot;Conservative fold-enrichment/depletion estimates shown on log2 scale&quot;</span><span class="p">);</span>
-<span class="kp">rm</span><span class="p">(</span>enrichment.estimates<span class="p">);</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">enrichment.estimates</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get.conservative.fold.enrichment.profile</span><span class="p">(</span><span class="n">chip.data</span><span class="p">,</span><span class="n">gfpcontrol.data</span><span class="p">,</span><span class="n">fws</span><span class="o">=</span><span class="m">500</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.01</span><span class="p">);</span>
+<span class="nf">writewig</span><span class="p">(</span><span class="n">enrichment.estimates</span><span class="p">,</span><span class="s">&quot;oct4.Enrichment.estimates.wig&quot;</span><span class="p">,</span><span class="s">&quot;Conservative fold-enrichment/depletion estimates shown on log2 scale&quot;</span><span class="p">);</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">enrichment.estimates</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 
 <p>Also, broad regions of enrichment for a specified scale can be quickly
 identified and output in broadPeak format using the following commands:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>broad.clusters <span class="o">&lt;-</span> get.broad.enrichment.clusters<span class="p">(</span>chip.data<span class="p">,</span>gfpcontrol.data<span class="p">,</span>window.size<span class="o">=</span><span class="m">1e3</span><span class="p">,</span>z.thr<span class="o">=</span><span class="m">3</span><span class="p">,</span>tag.shift<span class="o">=</span><span class="kp">round</span><span class="p">(</span>binding.characteristics<span class="o">$</span>peak<span class="o">$</span>x<span class="o">/</span><span class="m">2</span><span class="p">));</span>
-write.broadpeak.info<span class="p">(</span>broad.clusters<span class="p">,</span><span class="s">&quot;oct4.broadPeak&quot;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">broad.clusters</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get.broad.enrichment.clusters</span><span class="p">(</span><span class="n">chip.data</span><span class="p">,</span><span class="n">gfpcontrol.data</span><span class="p">,</span><span class="n">window.size</span><span class="o">=</span><span class="m">1e3</span><span class="p">,</span><span class="n">z.thr</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">tag.shift</span><span class="o">=</span><span class="nf">round</span><span class="p">(</span><span class="n">binding.characteristics</span><span class="o">$</span><span class="n">peak</span><span class="o">$</span><span class="n">x</span><span class="o">/</span><span class="m">2</span><span class="p">));</span>
+<span class="nf">write.broadpeak.info</span><span class="p">(</span><span class="n">broad.clusters</span><span class="p">,</span><span class="s">&quot;oct4.broadPeak&quot;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 
 <p>write out in bed format</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>write.table(cbind(rep(&quot;1&quot;, length(broad.clusters$chr1$s)), broad.clusters$chr1$s, broad.clusters$chr1$e), file = paste0(&quot;oct4&quot;,&quot;_enrich_broad_chr1.bed&quot;),quote = FALSE, row.names = FALSE, col.names = FALSE, sep = &quot;\t&quot;);
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>write.table(cbind(rep(&quot;1&quot;, length(broad.clusters$chr1$s)), broad.clusters$chr1$s, broad.clusters$chr1$e), file = paste0(&quot;oct4&quot;,&quot;_enrich_broad_chr1.bed&quot;),quote = FALSE, row.names = FALSE, col.names = FALSE, sep = &quot;\t&quot;);
+</code></pre></div></td></tr></table></div>
 
 <p>The tasks below will use window tag density (WTD) method to call binding
 positions, using FDR of 1% and a window size estimated by the
@@ -1307,23 +1404,21 @@ binding.characteristics.</p>
 E-value to the method calls below instead of the fdr), the
 binding.characteristics contains the optimized half-size for binding
 detection window:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fdr <span class="o">&lt;-</span> <span class="m">1e-2</span><span class="p">;</span>
-detection.window.halfsize <span class="o">&lt;-</span> binding.characteristics<span class="o">$</span>whs<span class="p">;</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">fdr</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1e-2</span><span class="p">;</span>
+<span class="n">detection.window.halfsize</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">binding.characteristics</span><span class="o">$</span><span class="n">whs</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
 
 <p>Identify binding positions using WTD method and write narrow peaks in
 BED format:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bp <span class="o">&lt;-</span> find.binding.positions<span class="p">(</span>signal.data<span class="o">=</span>chip.data<span class="p">,</span>control.data<span class="o">=</span>gfpcontrol.data<span class="p">,</span>fdr<span class="o">=</span>fdr<span class="p">,</span>whs<span class="o">=</span>detection.window.halfsize<span class="p">);</span>
-<span class="kp">print</span><span class="p">(</span><span class="kp">paste</span><span class="p">(</span><span class="s">&quot;detected&quot;</span><span class="p">,</span><span class="kp">sum</span><span class="p">(</span><span class="kp">unlist</span><span class="p">(</span><span class="kp">lapply</span><span class="p">(</span>bp<span class="o">$</span>npl<span class="p">,</span><span class="kr">function</span><span class="p">(</span>d<span class="p">)</span> <span class="kp">length</span><span class="p">(</span>d<span class="o">$</span>x<span class="p">)))),</span><span class="s">&quot;peaks&quot;</span><span class="p">));</span>
-bp.short <span class="o">&lt;-</span> add.broad.peak.regions<span class="p">(</span>chip.data<span class="p">,</span>gfpcontrol.data<span class="p">,</span>bp<span class="p">,</span>window.size<span class="o">=</span><span class="m">500</span><span class="p">,</span>z.thr<span class="o">=</span><span class="m">3</span><span class="p">);</span>
-write.table<span class="p">(</span>na.omit<span class="p">(</span><span class="kt">data.frame</span><span class="p">(</span><span class="kp">cbind</span><span class="p">(</span><span class="kp">rep</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="kp">length</span><span class="p">(</span>bp.short<span class="o">$</span>npl<span class="o">$</span>chr1<span class="o">$</span>rs<span class="p">)),</span> bp.short<span class="o">$</span>npl<span class="o">$</span>chr1<span class="o">$</span>rs<span class="p">,</span> bp.short<span class="o">$</span>npl<span class="o">$</span>chr1<span class="o">$</span>re<span class="p">))),</span> file <span class="o">=</span> <span class="kp">paste0</span><span class="p">(</span><span class="s">&quot;oct4&quot;</span><span class="p">,</span><span class="s">&quot;_enrich_narrow_chr1.bed&quot;</span><span class="p">),</span>quote <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> row.names <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> col.names <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">bp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">find</span><span class="o">.</span><span class="n">binding</span><span class="o">.</span><span class="n">positions</span><span class="p">(</span><span class="k">signal</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="n">chip</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">control</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="n">gfpcontrol</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">fdr</span><span class="o">=</span><span class="n">fdr</span><span class="p">,</span><span class="n">whs</span><span class="o">=</span><span class="n">detection</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">halfsize</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">paste</span><span class="p">(</span><span class="s2">&quot;detected&quot;</span><span class="p">,</span><span class="n">sum</span><span class="p">(</span><span class="n">unlist</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">bp</span><span class="o">$</span><span class="n">npl</span><span class="p">,</span><span class="n">function</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">$</span><span class="n">x</span><span class="p">)))),</span><span class="s2">&quot;peaks&quot;</span><span class="p">));</span>
+<span class="n">bp</span><span class="o">.</span><span class="n">short</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">add</span><span class="o">.</span><span class="n">broad</span><span class="o">.</span><span class="n">peak</span><span class="o">.</span><span class="n">regions</span><span class="p">(</span><span class="n">chip</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">gfpcontrol</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">bp</span><span class="p">,</span><span class="n">window</span><span class="o">.</span><span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">z</span><span class="o">.</span><span class="n">thr</span><span class="o">=</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">write</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">na</span><span class="o">.</span><span class="n">omit</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">cbind</span><span class="p">(</span><span class="n">rep</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">bp</span><span class="o">.</span><span class="n">short</span><span class="o">$</span><span class="n">npl</span><span class="o">$</span><span class="n">chr1</span><span class="o">$</span><span class="n">rs</span><span class="p">)),</span><span class="w"> </span><span class="n">bp</span><span class="o">.</span><span class="n">short</span><span class="o">$</span><span class="n">npl</span><span class="o">$</span><span class="n">chr1</span><span class="o">$</span><span class="n">rs</span><span class="p">,</span><span class="w"> </span><span class="n">bp</span><span class="o">.</span><span class="n">short</span><span class="o">$</span><span class="n">npl</span><span class="o">$</span><span class="n">chr1</span><span class="o">$</span><span class="n">re</span><span class="p">))),</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paste0</span><span class="p">(</span><span class="s2">&quot;oct4&quot;</span><span class="p">,</span><span class="s2">&quot;_enrich_narrow_chr1.bed&quot;</span><span class="p">),</span><span class="n">quote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">row</span><span class="o">.</span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">.</span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 
 <h3 id="step-3-comparing-binding-sites-to-annotations-using-the-biomart-package">STEP 3. Comparing Binding Sites to Annotations Using the biomaRt package<a class="headerlink" href="#step-3-comparing-binding-sites-to-annotations-using-the-biomart-package" title="Permanent link">&para;</a></h3>
 <p>In order to biologically interpret the results of ChIP-seq experiments,
@@ -1342,11 +1437,10 @@ you used in bowtie aligner.</p>
 <p>We will download the ENSEMBLE mouse genome annotations and generate a
 list of ENSEMBLE gene information on chromosome 1 including start
 position, end position, strand and description</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ensembl = useMart(host=&quot;asia.ensembl.org&quot;, &quot;ENSEMBL_MART_ENSEMBL&quot;, dataset = &quot;mmusculus_gene_ensembl&quot;);
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>ensembl = useMart(host=&quot;asia.ensembl.org&quot;, &quot;ENSEMBL_MART_ENSEMBL&quot;, dataset = &quot;mmusculus_gene_ensembl&quot;);
 genes.chr1 = getBM(attributes = c(&quot;chromosome_name&quot;, &quot;start_position&quot;, &quot;end_position&quot;, &quot;strand&quot;, &quot;description&quot;), filters = &quot;chromosome_name&quot;, values= &quot;1&quot;, mart = ensembl);
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>Next, we’re going to take our binding sites from the bp list and use it
 to determine the set of genes that contain significantly enriched Pol II
@@ -1355,86 +1449,79 @@ within 2kb of their TSS.</p>
 overlap function where bs represents a binding site position, ts is the
 annotated TSS and l is the allowed distance of the binding site from the
 TSS.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>overlap = function(bs, ts, l)
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">overlap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">function</span><span class="ss">(</span><span class="nv">bs</span>,<span class="w"> </span><span class="nv">ts</span>,<span class="w"> </span><span class="nv">l</span><span class="ss">)</span>
 {
-    if ((bs &gt; ts - l) &amp;&amp; (bs &lt; ts + l)) {
-        TRUE;
-    } else {
-        FALSE;
-    }
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ss">((</span><span class="nv">bs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">ts</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">l</span><span class="ss">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="ss">(</span><span class="nv">bs</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">ts</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">l</span><span class="ss">))</span><span class="w"> </span>{
+<span class="w">        </span><span class="nv">TRUE</span><span class="c1">;</span>
+<span class="w">    </span>}<span class="w"> </span><span class="k">else</span><span class="w"> </span>{
+<span class="w">        </span><span class="nv">FALSE</span><span class="c1">;</span>
+<span class="w">    </span>}
 }
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>Now we’ll write a function that takes a vector of binding site values,
 start positions, end positions and strands of the genes on chromosome X
 as well as our distance cutoff. l and outputs a logical vector of the
 genes that contain a Pol II site within l bp (i.e., TRUE value) or do
 not contain a Pol II site (i.e., FALSE value).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fivePrimeGenes = function(bs, ts, te, s, l) {
-    fivePrimeVec = logical();
-    for (i in 1:length(ts)) {
-            fivePrime = FALSE;
-            for (j in 1:length(bs)) {
-                if (s[i] == 1) {
-                    fivePrime = fivePrime || overlap(bs[j], ts[i], l);
-                } else {
-                    fivePrime = fivePrime || overlap(bs[j], te[i], l);
-                }
-             }
-            fivePrimeVec = c(fivePrimeVec, fivePrime);
-    }
-     fivePrimeVec;
-}
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">fivePrimeGenes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span><span class="w"> </span><span class="n">ts</span><span class="p">,</span><span class="w"> </span><span class="n">te</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="n">fivePrimeVec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logical</span><span class="p">();</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mi">1</span><span class="err">:</span><span class="n">length</span><span class="p">(</span><span class="n">ts</span><span class="p">))</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="n">fivePrime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">FALSE</span><span class="p">;</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mi">1</span><span class="err">:</span><span class="n">length</span><span class="p">(</span><span class="n">bs</span><span class="p">))</span><span class="w"> </span><span class="err">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">                    </span><span class="n">fivePrime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fivePrime</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">overlap</span><span class="p">(</span><span class="n">bs</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">ts</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">);</span>
+<span class="w">                </span><span class="err">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="err">{</span>
+<span class="w">                    </span><span class="n">fivePrime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fivePrime</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">overlap</span><span class="p">(</span><span class="n">bs</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">te</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">);</span>
+<span class="w">                </span><span class="err">}</span>
+<span class="w">             </span><span class="err">}</span>
+<span class="w">            </span><span class="n">fivePrimeVec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="n">fivePrimeVec</span><span class="p">,</span><span class="w"> </span><span class="n">fivePrime</span><span class="p">);</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="w">     </span><span class="n">fivePrimeVec</span><span class="p">;</span>
+<span class="err">}</span>
+</code></pre></div></td></tr></table></div>
 
 <p>Using the fivePrimeGenes function, generate a vector of the TSSs and
 genes that contain Pol II within .2kb of their TSS (i.e., l = 2000).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fivePrimeGenesLogical = fivePrimeGenes(bp$npl$chr1$x, genes.chr1$start_position, genes.chr1$end_position, genes.chr1$strand, 2000);
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>fivePrimeGenesLogical = fivePrimeGenes(bp$npl$chr1$x, genes.chr1$start_position, genes.chr1$end_position, genes.chr1$strand, 2000);
+</code></pre></div></td></tr></table></div>
 
 <p>Find the gene located on the plus strand</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fivePrimeStartsPlus = genes.chr1$start_position[fivePrimeGenesLogical &amp; genes.chr1$strand == 1];
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>fivePrimeStartsPlus = genes.chr1$start_position[fivePrimeGenesLogical &amp; genes.chr1$strand == 1];
+</code></pre></div></td></tr></table></div>
 
 <p>Find the gene located on the minus strand</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fivePrimeStartsMinus = genes.chr1$end_position[fivePrimeGenesLogical &amp; genes.chr1$strand == -1];
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>fivePrimeStartsMinus = genes.chr1$end_position[fivePrimeGenesLogical &amp; genes.chr1$strand == -1];
+</code></pre></div></td></tr></table></div>
 
 <p>Combine the start positions together</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fivePrimeStarts = sort(c(fivePrimeStartsPlus, fivePrimeStartsMinus))
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>fivePrimeStarts = sort(c(fivePrimeStartsPlus, fivePrimeStartsMinus))
+</code></pre></div></td></tr></table></div>
 
 <p>Get all the gene names</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fivePrimeGenes = genes.chr1$description[fivePrimeGenesLogical]
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">fivePrimeGenes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genes</span><span class="p">.</span><span class="n">chr1</span><span class="err">$</span><span class="n">description</span><span class="o">[</span><span class="n">fivePrimeGenesLogical</span><span class="o">]</span>
+</code></pre></div></td></tr></table></div>
 
 <h2 id="viewing-results-with-the-genome-browser">Viewing results with the Genome browser<a class="headerlink" href="#viewing-results-with-the-genome-browser" title="Permanent link">&para;</a></h2>
 <p>It is often instructive to look at your data in a genome browser, which
@@ -1495,7 +1582,7 @@ upload to IGV. The first file is at the following URL:
 </ul>
 <p>Repeat the process for the gfp control sample, located at:</p>
 <p><a href="http://www.ebi.ac.uk/~remco/ChIP-Seq_course/gfp.bw">http://www.ebi.ac.uk/~remco/ChIP-Seq_course/gfp.bw</a>.</p>
-<p>Go to a region on chromosome 1 (e.g. <code class="codehilite"><span class="mi">1</span><span class="o">:</span><span class="mi">34823162</span><span class="o">-</span><span class="mi">35323161</span></code>), and zoom in
+<p>Go to a region on chromosome 1 (e.g. <code>1:34823162-35323161</code>), and zoom in
 and out to view the signal and peak regions. Be aware that the y-axis of
 each track is auto-scaled independently of each other, so bigger-looking
 peaks may not actually be bigger! Always look at the values on the left
@@ -1504,14 +1591,29 @@ hand side axis.</p>
 <p class="admonition-title">Question</p>
 <p>What can you say about the profile of Oct4 peaks in this region?</p>
 </div>
-<details><summary><strong>Answer</strong></summary><div class="admonition success"><p class="admonition-title">Answer</p><p>There are no significant Oct4 peaks over the selected region.</p></div></details><p>Compare it with H3K4me3 histone modification wig file we have generated
+<details>
+<summary><strong>Answer</strong></summary>
+<div class="admonition success">
+<p class="admonition-title">Answer</p>
+<p>There are no significant Oct4 peaks over the selected region.</p>
+</div>
+</details>
+<p>Compare it with H3K4me3 histone modification wig file we have generated
 at <a href="http://www.ebi.ac.uk/~remco/ChIP-Seq_course/H3K4me3.bw">http://www.ebi.ac.uk/~remco/ChIP-Seq_course/H3K4me3.bw</a>.</p>
 <p>H3K4me3 has a region that contains relatively high peaks than Oct4.</p>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
-<p>Jump to <code class="codehilite"><span class="mi">1</span><span class="o">:</span><span class="mi">36066594</span><span class="o">-</span><span class="mi">36079728</span></code> for a sample peak. Do you think H3K4me3 peaks regions contain one or more modification sites? What about Oct4?</p>
+<p>Jump to <code>1:36066594-36079728</code> for a sample peak. Do you think H3K4me3 peaks regions contain one or more modification sites? What about Oct4?</p>
 </div>
-<details><summary><strong>Answer</strong></summary><div class="admonition success"><p class="admonition-title">Answer</p><p>Yes. There are roughly three peaks, which indicate the possibility of having more than one modification sites in this region. For Oct4, no peak can be observed.</p></div></details><div class="admonition note">
+<details>
+<summary><strong>Answer</strong></summary>
+<div class="admonition success">
+<p class="admonition-title">Answer</p>
+<p>Yes. There are roughly three peaks, which indicate the possibility of having more than one modification sites in this region. For Oct4, no peak can be observed.</p>
+</div>
+</details>
+<h3 id="advanced-session">Advanced Session<a class="headerlink" href="#advanced-session" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
 <p class="admonition-title"><em>Advanced exercise</em></p>
 <p><strong>Ensembl Visualization</strong></p>
 <p>Launch a web browser and go to the Ensembl website at
@@ -1554,7 +1656,7 @@ panel. Check the boxes in ’Enable/Disable all tracks’ for you *.bw
 files by selecting ’wiggle plot in the pop up menu.</p>
 <p>After uploading, choose <strong>Configure this page</strong>, and under <strong>Your data</strong>
 tick both boxes. Closing the window will save these changes.</p>
-<p>Go to a region on chromosome 1 (e.g. <code class="codehilite"><span class="mi">1</span><span class="o">:</span><span class="mi">34823162</span><span class="o">-</span><span class="mi">35323161</span></code>), and zoom in
+<p>Go to a region on chromosome 1 (e.g. <code>1:34823162-35323161</code>), and zoom in
 and out to view the signal and peak regions. Be aware that the y-axis of
 each track is auto-scaled independently of each other, so bigger-looking
 peaks may not actually be bigger! Always look at the values on the left
@@ -1602,7 +1704,14 @@ ChIP).</p>
 <p class="admonition-title">Question</p>
 <p>Which motif was found to be the most similar to your motif?</p>
 </div>
-<details><summary><strong>Answer</strong></summary><div class="admonition success"><p class="admonition-title">Answer</p><p>Sox2</p></div></details><h3 id="optional-motif-discovery-with-rsat-peak-motif">Optional: Motif discovery with RSAT peak-motif<a class="headerlink" href="#optional-motif-discovery-with-rsat-peak-motif" title="Permanent link">&para;</a></h3>
+<details>
+<summary><strong>Answer</strong></summary>
+<div class="admonition success">
+<p class="admonition-title">Answer</p>
+<p>Sox2</p>
+</div>
+</details>
+<h3 id="optional-motif-discovery-with-rsat-peak-motif">Optional: Motif discovery with RSAT peak-motif<a class="headerlink" href="#optional-motif-discovery-with-rsat-peak-motif" title="Permanent link">&para;</a></h3>
 <p>The motif discovery tool RSAT peak-motifs uses FASTA files as input. An
 optional background can be uploaded in FASTA format. RSAT peak-motifs
 automatically outputs motifs of 6 and 7 nucleotides length (two separate
@@ -1647,90 +1756,55 @@ E-Value.</p>
 <p>Chen, X et al.: Integration of external signaling pathways with the core
 transcriptional network in embryonic stem cells. Cell 133:6, 1106-17
 (2008).</p>
+
+
+
+
+
                 
-                  
-                
-              
-              
-                
-              
-            </article>
-          </div>
+              </article>
+            </div>
+          
+          
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../../btp-module-ngs-mapping/alignment/" title="Read Alignment" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Read Alignment
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../btp-module-rna-seq/rna-seq/" title="RNA-Seq" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                RNA-Seq
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            &copy; The authors; 2017-
-          </div>
-        
-        powered by
-        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
-        and
-        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
-          Material for MkDocs</a>
-      </div>
-      
-        
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; The authors; 2017-
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../../assets/javascripts/application-c35428f87f.js"></script>
-      
-      
-      <script>app.initialize({url:{base:"../../.."}})</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="../../../js/details.js"></script>
-      
-    
-    
       
     
   </body>

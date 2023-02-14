@@ -1,22 +1,25 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="This contains all material for Markdown version of BTP workshops.">
-      
       
       
         <meta name="author" content="Authors">
       
       
-        <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
+        <link rel="prev" href="../../cancer-module-cnv/cnv-tut/">
+      
+      
+        <link rel="next" href="../../cancer-module-viz/visu/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -24,89 +27,119 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr-1df76c4e58.js"></script>
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/application-769c285a91.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-02c2a4388f.palette.css">
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
+      
+
+    
     
     
       
         
         
-        
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
       <link rel="stylesheet" href="../../../css/details.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
     
     
   </head>
   
   
-  
-  
-    <body data-md-color-primary="indigo" data-md-color-accent="light-blue">
-  
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
         
-          <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-logo md-header-nav__button">
-            <img src="../../../media/logos/bpalogo.png" width="24" height="24">
-          </a>
-        
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <span class="md-flex__ellipsis md-header-nav__title">
-          
+        <a href="#key-learning-outcomes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-header__button md-logo" aria-label="Markdown Manuals for Bioinformatics Training Platform (BTP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markdown Manuals for Bioinformatics Training Platform (BTP)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
-              
-                <span class="md-header-nav__parent">
-                  Cancer Genomics Modules
-                </span>
-              
+              Structural Variant Analysis
             
-            Structural Variant Analysis
-          
-        </span>
+          </span>
+        </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-          
-<div class="md-search" data-md-component="search">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner">
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
-            Type to start searching
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -114,121 +147,38 @@
     </div>
   </div>
 </div>
-        
-      </div>
-      
-    </div>
+    
+    
   </nav>
+  
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
       
         
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="../../.." title="Home" class="md-tabs__link">
-        Home
-      </a>
-    
-  </li>
-
-      
+          
         
       
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../../timetables/timetable_introNGS/" title="Timetable" class="md-tabs__link">
-          Timetable
-        </a>
-      
-    </li>
-  
-
-      
-        
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../btp-module-ngs-cli/commandline/" title="Introduction to NGS Modules" class="md-tabs__link">
-          Introduction to NGS Modules
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../cancer-module-alignment/alignment/" title="Cancer Genomics Modules" class="md-tabs__link md-tabs__link--active">
-          Cancer Genomics Modules
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../denovo-module-bac/bac_asm/" title="DeNovo Modules" class="md-tabs__link">
-          DeNovo Modules
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../metagenomics-module-qc/ngs-qc/" title="Metagenomics Modules" class="md-tabs__link">
-          Metagenomics Modules
-        </a>
-      
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-logo md-nav__button">
-        <img src="../../../media/logos/bpalogo.png">
-      </i>
-    
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Markdown Manuals for Bioinformatics Training Platform (BTP)" class="md-nav__button md-logo" aria-label="Markdown Manuals for Bioinformatics Training Platform (BTP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
     Markdown Manuals for Bioinformatics Training Platform (BTP)
   </label>
   
@@ -238,216 +188,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../trainers/trainers/" title="The Trainers" class="md-nav__link">
-      The Trainers
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      Timetable
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Timetable
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_introNGS/" title="Intro to NGS" class="md-nav__link">
-      Intro to NGS
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_cancer/" title="Cancer Genomics" class="md-nav__link">
-      Cancer Genomics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_longRead/" title="Long Read" class="md-nav__link">
-      Long Read
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../preamble/" title="Workshop Information" class="md-nav__link">
-      Workshop Information
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Introduction to NGS Modules
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Introduction to NGS Modules
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-ngs-cli/commandline/" title="Introduction to Command Line" class="md-nav__link">
-      Introduction to Command Line
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-ngs-qc/ngs-qc/" title="Data Quality" class="md-nav__link">
-      Data Quality
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-ngs-mapping/alignment/" title="Read Alignment" class="md-nav__link">
-      Read Alignment
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-chip-seq/chip-seq/" title="ChIP-seq" class="md-nav__link">
-      ChIP-seq
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-rna-seq/rna-seq/" title="RNA-Seq" class="md-nav__link">
-      RNA-Seq
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-ngs-bio/biol/" title="NGS Biological Insight" class="md-nav__link">
-      NGS Biological Insight
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-velvet/velvet/" title="de novo Genome Assembly" class="md-nav__link">
-      de novo Genome Assembly
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../btp-module-denovo-canu/denovo_canu/" title="DeNovo Canu" class="md-nav__link">
-      DeNovo Canu
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
 
     
       
@@ -455,110 +204,384 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
-    
-    <label class="md-nav__link" for="nav-6">
-      Cancer Genomics Modules
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Cancer Genomics Modules
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-alignment/alignment/" title="Read Alignment" class="md-nav__link">
-      Read Alignment
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-snv/snv/" title="Single Nucleotide Variant Calling and Annotation" class="md-nav__link">
-      Single Nucleotide Variant Calling and Annotation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-cnv/cnv-tut/" title="Copy Number Variation" class="md-nav__link">
-      Copy Number Variation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../trainers/trainers/" class="md-nav__link">
+        The Trainers
+      </a>
+    </li>
   
 
+    
+      
+      
+      
 
-  <li class="md-nav__item md-nav__item--active">
+  
+  
+  
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Timetable
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Timetable" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Timetable
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_introNGS/" class="md-nav__link">
+        Intro to NGS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_cancer/" class="md-nav__link">
+        Cancer Genomics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../timetables/timetable_longRead/" class="md-nav__link">
+        Long Read
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preamble/" class="md-nav__link">
+        Workshop Information
+      </a>
+    </li>
+  
+
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Introduction to NGS Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introduction to NGS Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction to NGS Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-cli/commandline/" class="md-nav__link">
+        Introduction to Command Line
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-qc/ngs-qc/" class="md-nav__link">
+        Data Quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-mapping/alignment/" class="md-nav__link">
+        Read Alignment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-chip-seq/chip-seq/" class="md-nav__link">
+        ChIP-seq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-rna-seq/rna-seq/" class="md-nav__link">
+        RNA-Seq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-ngs-bio/biol/" class="md-nav__link">
+        NGS Biological Insight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-velvet/velvet/" class="md-nav__link">
+        de novo Genome Assembly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../btp-module-denovo-canu/denovo_canu/" class="md-nav__link">
+        DeNovo Canu
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Cancer Genomics Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cancer Genomics Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Cancer Genomics Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-alignment/alignment/" class="md-nav__link">
+        Read Alignment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-snv/snv/" class="md-nav__link">
+        Single Nucleotide Variant Calling and Annotation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-cnv/cnv-tut/" class="md-nav__link">
+        Copy Number Variation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Structural Variant Analysis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Structural Variant Analysis
-      </label>
-    
-    <a href="./" title="Structural Variant Analysis" class="md-nav__link md-nav__link--active">
-      Structural Variant Analysis
-    </a>
-    
+      </a>
       
-<nav class="md-nav md-nav--secondary">
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-learning-outcomes" title="Key Learning Outcomes" class="md-nav__link">
+  <a href="#key-learning-outcomes" class="md-nav__link">
     Key Learning Outcomes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources-youll-be-using" title="Resources You’ll be Using" class="md-nav__link">
+  <a href="#resources-youll-be-using" class="md-nav__link">
     Resources You’ll be Using
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Resources You’ll be Using">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tools-used" title="Tools Used" class="md-nav__link">
+  <a href="#tools-used" class="md-nav__link">
     Tools Used
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#useful-links" title="Useful Links" class="md-nav__link">
+  <a href="#useful-links" class="md-nav__link">
     Useful Links
   </a>
   
@@ -570,78 +593,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#author-information" title="Author Information" class="md-nav__link">
+  <a href="#author-information" class="md-nav__link">
     Author Information
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#alignment-quality-control" title="Alignment Quality Control" class="md-nav__link">
+  <a href="#alignment-quality-control" class="md-nav__link">
     Alignment Quality Control
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-environment" title="Prepare the Environment" class="md-nav__link">
+  <a href="#prepare-the-environment" class="md-nav__link">
     Prepare the Environment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#somatic-structural-variant-discovery-using-delly" title="Somatic Structural Variant Discovery using DELLY" class="md-nav__link">
+  <a href="#somatic-structural-variant-discovery-using-delly" class="md-nav__link">
     Somatic Structural Variant Discovery using DELLY
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#delly-vcf-output" title="DELLY VCF output" class="md-nav__link">
+  <a href="#delly-vcf-output" class="md-nav__link">
     DELLY VCF output
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#somatic-structural-variant-filtering" title="Somatic Structural Variant Filtering" class="md-nav__link">
+  <a href="#somatic-structural-variant-filtering" class="md-nav__link">
     Somatic Structural Variant Filtering
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualisation-of-somatic-structural-variants" title="Visualisation of Somatic Structural Variants" class="md-nav__link">
+  <a href="#visualisation-of-somatic-structural-variants" class="md-nav__link">
     Visualisation of Somatic Structural Variants
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Visualisation of Somatic Structural Variants">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#verify-deletion" title="Verify Deletion" class="md-nav__link">
+  <a href="#verify-deletion" class="md-nav__link">
     Verify Deletion
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify-translocation" title="Verify translocation" class="md-nav__link">
+  <a href="#verify-translocation" class="md-nav__link">
     Verify translocation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify-tandem-duplication" title="Verify tandem duplication" class="md-nav__link">
+  <a href="#verify-tandem-duplication" class="md-nav__link">
     Verify tandem duplication
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify-inversion" title="Verify Inversion" class="md-nav__link">
+  <a href="#verify-inversion" class="md-nav__link">
     Verify Inversion
   </a>
   
@@ -653,228 +676,280 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#acknowledgements" title="Acknowledgements" class="md-nav__link">
+  <a href="#acknowledgements" class="md-nav__link">
     Acknowledgements
   </a>
   
 </li>
       
-      
-      
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-viz/visu/" class="md-nav__link">
+        Variant Visualisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
-  </li>
-
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_6">
+          Somatic Mutations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Somatic Mutations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          Somatic Mutations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-somatic/01_signatures/" class="md-nav__link">
+        Assessing somatic mutational signatures
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cancer-module-somatic/02_intogen/" class="md-nav__link">
+        Cohort analysis for the identification of driver genes
+      </a>
+    </li>
+  
+
+            
           
+        </ul>
+      </nav>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-viz/visu/" title="Variant Visualisation" class="md-nav__link">
-      Variant Visualisation
-    </a>
-  </li>
-
-        
+            
           
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
-    
-    <label class="md-nav__link" for="nav-6-6">
-      Somatic Mutations
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-6">
-        Somatic Mutations
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-somatic/01_signatures/" title="Assessing somatic mutational signatures" class="md-nav__link">
-      Assessing somatic mutational signatures
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cancer-module-somatic/02_intogen/" title="Cohort analysis for the identification of driver genes" class="md-nav__link">
-      Cohort analysis for the identification of driver genes
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      DeNovo Modules
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        DeNovo Modules
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          DeNovo Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DeNovo Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          DeNovo Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-bac/bac_asm/" class="md-nav__link">
+        Bacterial Assembly
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-euk/eukaryotic_assem/" class="md-nav__link">
+        Eukaryote Assembly
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denovo-module-scaffolding/scaffold/" class="md-nav__link">
+        Scaffolding
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../denovo-module-bac/bac_asm/" title="Bacterial Assembly" class="md-nav__link">
-      Bacterial Assembly
-    </a>
-  </li>
-
-        
+            
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../denovo-module-euk/eukaryotic_assem/" title="Eukaryote Assembly" class="md-nav__link">
-      Eukaryote Assembly
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../denovo-module-scaffolding/scaffold/" title="Scaffolding" class="md-nav__link">
-      Scaffolding
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      Metagenomics Modules
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        Metagenomics Modules
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Metagenomics Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Metagenomics Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Metagenomics Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-qc/ngs-qc/" class="md-nav__link">
+        Metagenomics QC
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-tax/tax/" class="md-nav__link">
+        Metagenomics Taxonomic
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-vis/vis/" class="md-nav__link">
+        Metagenomics Visualisation
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-qc/ngs-qc/" title="Metagenomics QC" class="md-nav__link">
-      Metagenomics QC
-    </a>
-  </li>
-
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-wga/wga/" class="md-nav__link">
+        Metagenomics WGA
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metagenomics-module-fda/fda/" class="md-nav__link">
+        Metagenomics Functional Analysis
+      </a>
+    </li>
+  
+
+            
           
-
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-tax/tax/" title="Metagenomics Taxonomic" class="md-nav__link">
-      Metagenomics Taxonomic
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-vis/vis/" title="Metagenomics Visualisation" class="md-nav__link">
-      Metagenomics Visualisation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-wga/wga/" title="Metagenomics WGA" class="md-nav__link">
-      Metagenomics WGA
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../metagenomics-module-fda/fda/" title="Metagenomics Functional Analysis" class="md-nav__link">
-      Metagenomics Functional Analysis
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -884,41 +959,47 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-learning-outcomes" title="Key Learning Outcomes" class="md-nav__link">
+  <a href="#key-learning-outcomes" class="md-nav__link">
     Key Learning Outcomes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources-youll-be-using" title="Resources You’ll be Using" class="md-nav__link">
+  <a href="#resources-youll-be-using" class="md-nav__link">
     Resources You’ll be Using
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Resources You’ll be Using">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tools-used" title="Tools Used" class="md-nav__link">
+  <a href="#tools-used" class="md-nav__link">
     Tools Used
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#useful-links" title="Useful Links" class="md-nav__link">
+  <a href="#useful-links" class="md-nav__link">
     Useful Links
   </a>
   
@@ -930,78 +1011,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#author-information" title="Author Information" class="md-nav__link">
+  <a href="#author-information" class="md-nav__link">
     Author Information
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#alignment-quality-control" title="Alignment Quality Control" class="md-nav__link">
+  <a href="#alignment-quality-control" class="md-nav__link">
     Alignment Quality Control
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-environment" title="Prepare the Environment" class="md-nav__link">
+  <a href="#prepare-the-environment" class="md-nav__link">
     Prepare the Environment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#somatic-structural-variant-discovery-using-delly" title="Somatic Structural Variant Discovery using DELLY" class="md-nav__link">
+  <a href="#somatic-structural-variant-discovery-using-delly" class="md-nav__link">
     Somatic Structural Variant Discovery using DELLY
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#delly-vcf-output" title="DELLY VCF output" class="md-nav__link">
+  <a href="#delly-vcf-output" class="md-nav__link">
     DELLY VCF output
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#somatic-structural-variant-filtering" title="Somatic Structural Variant Filtering" class="md-nav__link">
+  <a href="#somatic-structural-variant-filtering" class="md-nav__link">
     Somatic Structural Variant Filtering
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualisation-of-somatic-structural-variants" title="Visualisation of Somatic Structural Variants" class="md-nav__link">
+  <a href="#visualisation-of-somatic-structural-variants" class="md-nav__link">
     Visualisation of Somatic Structural Variants
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Visualisation of Somatic Structural Variants">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#verify-deletion" title="Verify Deletion" class="md-nav__link">
+  <a href="#verify-deletion" class="md-nav__link">
     Verify Deletion
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify-translocation" title="Verify translocation" class="md-nav__link">
+  <a href="#verify-translocation" class="md-nav__link">
     Verify translocation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify-tandem-duplication" title="Verify tandem duplication" class="md-nav__link">
+  <a href="#verify-tandem-duplication" class="md-nav__link">
     Verify tandem duplication
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify-inversion" title="Verify Inversion" class="md-nav__link">
+  <a href="#verify-inversion" class="md-nav__link">
     Verify Inversion
   </a>
   
@@ -1013,13 +1094,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#acknowledgements" title="Acknowledgements" class="md-nav__link">
+  <a href="#acknowledgements" class="md-nav__link">
     Acknowledgements
   </a>
   
 </li>
-      
-      
       
     </ul>
   
@@ -1029,14 +1108,17 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                
-                  <h1>Structural Variant Analysis</h1>
-                
-                <h2 id="key-learning-outcomes">Key Learning Outcomes<a class="headerlink" href="#key-learning-outcomes" title="Permanent link">&para;</a></h2>
+                  
+
+
+
+  <h1>Structural Variant Analysis</h1>
+
+<h2 id="key-learning-outcomes">Key Learning Outcomes<a class="headerlink" href="#key-learning-outcomes" title="Permanent link">&para;</a></h2>
 <p>By the end of the structural variant (SV) detection practical course
 participants will:</p>
 <ul>
@@ -1050,7 +1132,7 @@ participants will:</p>
     prior to structural variant calling.</p>
 </li>
 <li>
-<p>Have run <code class="codehilite">DELLY</code> on a subset of whole genome next generation
+<p>Have run <code>DELLY</code> on a subset of whole genome next generation
     sequencing data pertaining to a single human tumour with a matched
     normal control.</p>
 </li>
@@ -1063,8 +1145,8 @@ participants will:</p>
 </li>
 <li>
 <p>Have used their understanding of distinct SV paired-end mapping and
-    soft-clipped read patterns to visually verify <code class="codehilite">DELLY</code> predicted SVs
-    using <code class="codehilite">IGV</code>.</p>
+    soft-clipped read patterns to visually verify <code>DELLY</code> predicted SVs
+    using <code>IGV</code>.</p>
 </li>
 </ul>
 <hr />
@@ -1101,19 +1183,19 @@ Sonika Tyagi <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#111;&#110;
 <p>For structural variant calling several alignment quality control metrics
 should be evaluated. All paired-end mapping methods heavily rely on the
 insert size distribution. GC-content biases are important as it can
-impact read-depths. <code class="codehilite">DELLY</code> generates read-depth ratios between tumour and
+impact read-depths. <code>DELLY</code> generates read-depth ratios between tumour and
 control samples. The percentage of mapped reads, singletons, duplicates
 and properly paired reads are additional metrics you should evaluate
 prior to any structural variant calling. These statistics vary largely
 by protocol and hence, it is usually best to compare multiple different
 sequencing runs using the same against each other to highlight outliers.</p>
-<p>It is recommended that Picard module commands <code class="codehilite">CollectInsertSizeMetrics</code>
-and <code class="codehilite">CollectGcBiasMetrics</code>, and <code class="codehilite">samtools flagstat</code> command be used.</p>
+<p>It is recommended that Picard module commands <code>CollectInsertSizeMetrics</code>
+and <code>CollectGcBiasMetrics</code>, and <code>samtools flagstat</code> command be used.</p>
 <hr />
 <h2 id="prepare-the-environment">Prepare the Environment<a class="headerlink" href="#prepare-the-environment" title="Permanent link">&para;</a></h2>
 <p>As a quick introduction we will do a structural variant analysis using a
 single immortal cancer cell line and its control genome (mortal parental
-cells). Total execution time to run the <code class="codehilite">DELLY</code> structural discovery
+cells). Total execution time to run the <code>DELLY</code> structural discovery
 calling program for a matched normal tumour pair will vary depending on
 the read coverage and the size of the genome. As a guide, it can take
 approximately 10 to 50 hours (translocation predictions taking the
@@ -1128,42 +1210,30 @@ directory path to either, the input WGS bam files, hg19 reference,
 programs or output.</p>
 <p>Open the Terminal.</p>
 <p>First, go to the right folder, where the data are stored.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> /home/trainee/sv
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/trainee/sv
 ls
-mkdir &lt;YourFirstName&gt;
-<span class="nb">cd</span> &lt;YourFirstName&gt;
+mkdir<span class="w"> </span>&lt;YourFirstName&gt;
+<span class="nb">cd</span><span class="w"> </span>&lt;YourFirstName&gt;
 
-<span class="nb">export</span> <span class="nv">DS</span><span class="o">=</span>/home/trainee/sv/data
-<span class="nb">export</span> <span class="nv">RF</span><span class="o">=</span>/home/trainee/sv/reference_data
-<span class="nb">export</span> <span class="nv">SF</span><span class="o">=</span>/home/trainee/sv/variantFiltering/somaticVariants
-<span class="nb">export</span> <span class="nv">BR</span><span class="o">=</span>/home/trainee/snv/Applications/igv
-<span class="nb">export</span> <span class="nv">CZ</span><span class="o">=</span>/home/trainee/sv/converter
-</pre></div>
-</td></tr></table>
-
+<span class="nb">export</span><span class="w"> </span><span class="nv">DS</span><span class="o">=</span>/home/trainee/sv/data
+<span class="nb">export</span><span class="w"> </span><span class="nv">RF</span><span class="o">=</span>/home/trainee/sv/reference_data
+<span class="nb">export</span><span class="w"> </span><span class="nv">SF</span><span class="o">=</span>/home/trainee/sv/variantFiltering/somaticVariants
+<span class="nb">export</span><span class="w"> </span><span class="nv">BR</span><span class="o">=</span>/home/trainee/snv/Applications/igv
+<span class="nb">export</span><span class="w"> </span><span class="nv">CZ</span><span class="o">=</span>/home/trainee/sv/converter
+</code></pre></div>
 <hr />
 <h2 id="somatic-structural-variant-discovery-using-delly">Somatic Structural Variant Discovery using DELLY<a class="headerlink" href="#somatic-structural-variant-discovery-using-delly" title="Permanent link">&para;</a></h2>
 <p>In order to generate <em>putative</em> somatic SVs it is crucial to account for
 germline SVs. To facilitate, DELLY requires the joint input of a match
 normal control and the cancer aligned sequencing data (bam files).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>delly -t DEL -x $RF/hg19.excl -o del.vcf -g $RF/hg19.fa $DS/cancer_cell_line.bam $DS/control.bam
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>delly -t DEL -x $RF/hg19.excl -o del.vcf -g $RF/hg19.fa $DS/cancer_cell_line.bam $DS/control.bam
 delly -t DUP -x $RF/hg19.excl -o dup.vcf -g $RF/hg19.fa $DS/cancer_cell_line.bam $DS/control.bam
 delly -t INV -x $RF/hg19.excl -o inv.vcf -g $RF/hg19.fa $DS/cancer_cell_line.bam $DS/control.bam
 delly -t TRA -x $RF/hg19.excl -o tra.vcf -g $RF/hg19.fa $DS/cancer_cell_line.bam $DS/control.bam
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>Description of the arguments used in the command:</p>
 <blockquote>
@@ -1177,75 +1247,74 @@ delly -t TRA -x $RF/hg19.excl -o tra.vcf -g $RF/hg19.fa $DS/cancer_cell_line.bam
 </blockquote>
 <hr />
 <h2 id="delly-vcf-output">DELLY VCF output<a class="headerlink" href="#delly-vcf-output" title="Permanent link">&para;</a></h2>
-<p>A VCF file has multiple header lines starting with the hash <code class="codehilite">#</code> sign.
+<p>A VCF file has multiple header lines starting with the hash <code>#</code> sign.
 Below the header lines is one record for each structural variant. The
 record format is described in the table below:</p>
 <table>
 <thead>
 <tr>
-<th align="left">Column</th>
-<th align="left">Field</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">1</td>
-<td align="left">CHROM</td>
-<td align="left">Chromosome name</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">CHROM</td>
+<td style="text-align: left;">Chromosome name</td>
 </tr>
 <tr>
-<td align="left">2</td>
-<td align="left">POS</td>
-<td align="left">1-based position. For an indel, this is the position preceding the indel</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">POS</td>
+<td style="text-align: left;">1-based position. For an indel, this is the position preceding the indel</td>
 </tr>
 <tr>
-<td align="left">3</td>
-<td align="left">ID</td>
-<td align="left">Variant identifier</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">ID</td>
+<td style="text-align: left;">Variant identifier</td>
 </tr>
 <tr>
-<td align="left">4</td>
-<td align="left">REF</td>
-<td align="left">Reference sequence at POS involved in the variant</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">REF</td>
+<td style="text-align: left;">Reference sequence at POS involved in the variant</td>
 </tr>
 <tr>
-<td align="left">5</td>
-<td align="left">ALT</td>
-<td align="left">Comma delimited list of alternative sequence(s)</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">ALT</td>
+<td style="text-align: left;">Comma delimited list of alternative sequence(s)</td>
 </tr>
 <tr>
-<td align="left">6</td>
-<td align="left">QUAL</td>
-<td align="left">Phred-scaled probability of all samples being homozygous reference</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">QUAL</td>
+<td style="text-align: left;">Phred-scaled probability of all samples being homozygous reference</td>
 </tr>
 <tr>
-<td align="left">7</td>
-<td align="left">FILTER</td>
-<td align="left">Semicolon delimited list of filters that the variant fails to pass</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">FILTER</td>
+<td style="text-align: left;">Semicolon delimited list of filters that the variant fails to pass</td>
 </tr>
 <tr>
-<td align="left">8</td>
-<td align="left">INFO</td>
-<td align="left">Semicolon delimited list of variant information</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">INFO</td>
+<td style="text-align: left;">Semicolon delimited list of variant information</td>
 </tr>
 <tr>
-<td align="left">9</td>
-<td align="left">FORMAT</td>
-<td align="left">Colon delimited list of the format of sample genotypes in subsequent fields</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">FORMAT</td>
+<td style="text-align: left;">Colon delimited list of the format of sample genotypes in subsequent fields</td>
 </tr>
 <tr>
-<td align="left">10+</td>
-<td align="left"></td>
-<td align="left">Individual genotype information defined by FORMAT</td>
+<td style="text-align: left;">10+</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Individual genotype information defined by FORMAT</td>
 </tr>
 </tbody>
 </table>
-<p>You can look at the header of the vcf file using <code class="codehilite">grep -A 1</code> includes
+<p>You can look at the header of the vcf file using <code>grep -A 1</code> includes
 the first structural variant record in the file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>grep &quot;^#&quot; -A 1 del.vcf
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>grep &quot;^#&quot; -A 1 del.vcf
+</code></pre></div></td></tr></table></div>
 
 <p><br>
 The INFO field holds structural variant site information whereas all
@@ -1262,17 +1331,14 @@ all paired-ends with a mapping quality greater than 20 by default.</p>
 and breakpoints. If you browse through the vcf file you will notice that
 a subset of the DELLY structural variant predictions have been refined
 using split-reads. These precise variants are flagged in the vcf info
-field with the tag <code class="codehilite">PRECISE</code>. To count the number of precise and
-imprecise variants you can simply use <code class="codehilite">grep</code>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>grep -c -w <span class="s2">&quot;PRECISE&quot;</span> *.vcf
-grep -c -w <span class="s2">&quot;IMPRECISE&quot;</span> *.vcf
-</pre></div>
-</td></tr></table>
-
+field with the tag <code>PRECISE</code>. To count the number of precise and
+imprecise variants you can simply use <code>grep</code>.</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-c<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;PRECISE&quot;</span><span class="w"> </span>*.vcf
+grep<span class="w"> </span>-c<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;IMPRECISE&quot;</span><span class="w"> </span>*.vcf
+</code></pre></div>
 <p><br>
 DELLY clusters abnormal paired-ends and every single cluster gives rise
-to an <code class="codehilite">IMPRECISE</code> SV call. For every <code class="codehilite">IMPRECISE</code> SV call an attempt is made
+to an <code>IMPRECISE</code> SV call. For every <code>IMPRECISE</code> SV call an attempt is made
 to identify supporting split-reads/soft-clipped reads DELLY then
 computes a consensus sequence (INFO:CONSENSUS) out of all split-read
 candidates and then aligns this consensus sequence to the reference
@@ -1287,10 +1353,10 @@ tail-to-tail inversions, and so on. The consensus alignment quality
 reference. Nearby SNPs, InDels and micro-insertions at the breakpoint
 can lower this score but only for mis-assemblies it should be very poor.
 DELLY currently drops consensus alignments with a score &lt;0.8 and then
-falls back to an <code class="codehilite">IMPRECISE</code> prediction.</p>
+falls back to an <code>IMPRECISE</code> prediction.</p>
 <p>SVs are flagged as FILTER:LowQual if PE &lt;3 OR MAPQ &lt;20 (for
 translocations: PE &lt;5 OR MAPQ &lt;20), otherwise, the SV results in a
-FILTER:PASS. <code class="codehilite">PRECISE</code> variants will have split-read support (SR &gt;0).</p>
+FILTER:PASS. <code>PRECISE</code> variants will have split-read support (SR &gt;0).</p>
 <hr />
 <h2 id="somatic-structural-variant-filtering">Somatic Structural Variant Filtering<a class="headerlink" href="#somatic-structural-variant-filtering" title="Permanent link">&para;</a></h2>
 <p>Please note that this vcf file contains germline and somatic structural
@@ -1303,32 +1369,25 @@ confident somatic calls one could exclude all structural variants
 &lt;400bp, require a minimum variant allele frequency of 10%, no support
 in the matched normal and an overall confident structural variant site
 prediction with the VCF filter field being equal to PASS.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">python</span> <span class="err">$</span><span class="n">SF</span><span class="o">/</span><span class="n">somaticFilter</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">t</span> <span class="n">DEL</span>  <span class="o">-</span><span class="n">T</span> <span class="n">cancer_cell_line</span> <span class="o">-</span><span class="n">N</span> <span class="n">control</span> <span class="o">-</span><span class="n">v</span> <span class="k">del</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">o</span> <span class="k">del</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">400</span> <span class="o">-</span><span class="n">f</span>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="err">$</span><span class="n">SF</span><span class="o">/</span><span class="n">somaticFilter</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">t</span> <span class="n">DEL</span>  <span class="o">-</span><span class="n">T</span> <span class="n">cancer_cell_line</span> <span class="o">-</span><span class="n">N</span> <span class="n">control</span> <span class="o">-</span><span class="n">v</span> <span class="k">del</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">o</span> <span class="k">del</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">400</span> <span class="o">-</span><span class="n">f</span>
 <span class="n">python</span> <span class="err">$</span><span class="n">SF</span><span class="o">/</span><span class="n">somaticFilter</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">t</span> <span class="n">DUP</span> <span class="o">-</span><span class="n">T</span> <span class="n">cancer_cell_line</span> <span class="o">-</span><span class="n">N</span> <span class="n">control</span> <span class="o">-</span><span class="n">v</span> <span class="n">dup</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">o</span> <span class="n">dup</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">400</span> <span class="o">-</span><span class="n">f</span>
 <span class="n">python</span> <span class="err">$</span><span class="n">SF</span><span class="o">/</span><span class="n">somaticFilter</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">t</span> <span class="n">INV</span>  <span class="o">-</span><span class="n">T</span> <span class="n">cancer_cell_line</span> <span class="o">-</span><span class="n">N</span> <span class="n">control</span> <span class="o">-</span><span class="n">v</span> <span class="n">inv</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">o</span> <span class="n">inv</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">400</span> <span class="o">-</span><span class="n">f</span>
 <span class="n">python</span> <span class="err">$</span><span class="n">SF</span><span class="o">/</span><span class="n">somaticFilter</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">t</span> <span class="n">TRA</span> <span class="o">-</span><span class="n">T</span> <span class="n">cancer_cell_line</span> <span class="o">-</span><span class="n">N</span> <span class="n">control</span> <span class="o">-</span><span class="n">v</span> <span class="n">tra</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">o</span> <span class="n">tra</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">400</span> <span class="o">-</span><span class="n">f</span>
-</pre></div>
-</td></tr></table>
-
+</code></pre></div>
 <p><br>
-Using <code class="codehilite">VCFtools</code> we can merge all somatic structural variants together in
+Using <code>VCFtools</code> we can merge all somatic structural variants together in
 a single vcf file.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vcf-concat del.filt.vcf dup.filt.vcf inv.filt.vcf tra.filt.vcf | vcf-sort &gt; somatic.sv.vcf
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>vcf-concat del.filt.vcf dup.filt.vcf inv.filt.vcf tra.filt.vcf | vcf-sort &gt; somatic.sv.vcf
+</code></pre></div></td></tr></table></div>
 
 <p><br>
-For large VCF files you should also zip and index them using <code class="codehilite">bgzip</code> and
-<code class="codehilite">tabix</code>. Please run the below commands to meet the requirements for
-visualising somatic structural variants using <code class="codehilite">IGV</code>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bgzip somatic.sv.vcf
+For large VCF files you should also zip and index them using <code>bgzip</code> and
+<code>tabix</code>. Please run the below commands to meet the requirements for
+visualising somatic structural variants using <code>IGV</code>.</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>bgzip somatic.sv.vcf
 tabix somatic.sv.vcf.gz
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <hr />
 <h2 id="visualisation-of-somatic-structural-variants">Visualisation of Somatic Structural Variants<a class="headerlink" href="#visualisation-of-somatic-structural-variants" title="Permanent link">&para;</a></h2>
@@ -1339,78 +1398,97 @@ considerable focus being placed on single-nucleotide variants and
 InDels. It is arguable whether the file format is easy to interpret for
 basic SVs and much less for complex SV formatting. To make it easier to
 see the breakpoints we will create a bed file.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$CZ/sv.vcf2bed.sh somatic.sv.vcf.gz &gt; somatic.sv.bed
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$CZ/sv.vcf2bed.sh somatic.sv.vcf.gz &gt; somatic.sv.bed
 head somatic.sv.bed
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p><br>
 Load the IGV browser</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$BR/igv.sh
-</pre></div>
-</td></tr></table>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$BR/igv.sh
+</code></pre></div></td></tr></table></div>
 
 <p><br>
-Once IGV has started use <code class="codehilite">File</code> and <code class="codehilite">Load from File</code> to load the
-<code class="codehilite">cancer_cell_line.bam</code>. To dedicate more of the screen to read pile ups,
+Once IGV has started use <code>File</code> and <code>Load from File</code> to load the
+<code>cancer_cell_line.bam</code>. To dedicate more of the screen to read pile ups,
 right click on the left hand box that contains the
-<code class="codehilite">cancer_cell_line.bam Junctions</code> then select <code class="codehilite">Remove Track</code>. Go to
-<code class="codehilite">View</code> menu and select <code class="codehilite">Preferences</code>, then click on the Alignments tab
-and in the <code class="codehilite">Visibility range threshold (kb)</code> text box, enter 600. This
+<code>cancer_cell_line.bam Junctions</code> then select <code>Remove Track</code>. Go to
+<code>View</code> menu and select <code>Preferences</code>, then click on the Alignments tab
+and in the <code>Visibility range threshold (kb)</code> text box, enter 600. This
 will allow you to increase your visibility of pile ups as you zoom out.
-Now look for check box for <code class="codehilite">Filter secondary alignments</code> click on to
+Now look for check box for <code>Filter secondary alignments</code> click on to
 ensure we do not see secondary alignments (alternate mapped position of
-a read). Also ensure that <code class="codehilite">Show soft-clipped bases</code> has been checked
-then click <code class="codehilite">OK</code>.</p>
-<p>Then import <code class="codehilite">somatic.sv.bed</code> from your working directory using <code class="codehilite">Regions</code>
-and <code class="codehilite">Import Regions</code>.</p>
+a read). Also ensure that <code>Show soft-clipped bases</code> has been checked
+then click <code>OK</code>.</p>
+<p>Then import <code>somatic.sv.bed</code> from your working directory using <code>Regions</code>
+and <code>Import Regions</code>.</p>
 <h3 id="verify-deletion">Verify Deletion<a class="headerlink" href="#verify-deletion" title="Permanent link">&para;</a></h3>
 <div class="admonition attention">
 <p><em>This is an advanced section.</em>  </p>
 </div>
 <p>The somatic structural variants can then be browsed easily using the
-<code class="codehilite">Region Navigator</code>. Select the deletion (chrX:76853017-77014863) from
-the <code class="codehilite">Region Navigator</code> and click <code class="codehilite">View</code>. This will centre the IGV
+<code>Region Navigator</code>. Select the deletion (chrX:76853017-77014863) from
+the <code>Region Navigator</code> and click <code>View</code>. This will centre the IGV
 alignment view on the selected structural variant. Close the regions of
 interest pop up window. The red bar below the ruler marks the region of
 the deletion.</p>
-<p>It’s usually best to zoom out once by clicking on the <code class="codehilite">-</code> sign in the
+<p>It’s usually best to zoom out once by clicking on the <code>-</code> sign in the
 toolbar at the top, to give a wide view of the supporting abnormal
 paired-end read mappings.</p>
 <p>To highlight the abnormal paired-ends right click on the main track
-display panel and select <code class="codehilite">Color alignments by</code> and then switch to
-<code class="codehilite">insert size and pair orientation</code>.</p>
+display panel and select <code>Color alignments by</code> and then switch to
+<code>insert size and pair orientation</code>.</p>
 <p>Read pairs that have a larger than expected insert size will be
-highlighted in red. Click <code class="codehilite">View as pairs</code>. Right click and <code class="codehilite">Sortalignments by</code> then select <code class="codehilite">start location</code>.</p>
+highlighted in red. Click <code>View as pairs</code>. Right click and <code>Sort
+alignments by</code> then select <code>start location</code>.</p>
 <p><br></p>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>How many abnormal <em>paired-end read pairs</em> (red coloured F/R oriented
 read pairs) can you see that spans the deletion region? Does this number
 coincide with the INFO:PE?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>19, YES</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>19, YES</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>Zoom into left breakpoint and tally the number of soft-clipped reads at
 both junctions. How many abnormal split-reads (soft-clipped reads) did
 you observe? Clue INFO:SR.</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>11</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>11</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
-<p>Go to the RefSeq genes track at the bottom of <code class="codehilite">IGV</code> and right click to
-<code class="codehilite">Expanded</code>. Is the predicted deletion likely to have a deleterious
+<p>Go to the RefSeq genes track at the bottom of <code>IGV</code> and right click to
+<code>Expanded</code>. Is the predicted deletion likely to have a deleterious
 impact on a gene? If so, what gene and exons are deleted?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>ATRX, exons 2 to 25.</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>ATRX, exons 2 to 25.</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>Does this region appear to be completely removed from this cancer
 genome? How can you tell?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Yes, there is no read coverage within this deletion region relative to
-the control genome.</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>Yes, there is no read coverage within this deletion region relative to
+the control genome.</p>
+</details>
+</div>
 </div>
 <h3 id="verify-translocation">Verify translocation<a class="headerlink" href="#verify-translocation" title="Permanent link">&para;</a></h3>
 <div class="admonition attention">
@@ -1418,12 +1496,12 @@ the control genome.</p></details></div>
 </div>
 <ul>
 <li>
-<p>Select the duplication (chrX:45649874-45689322) from the <code class="codehilite">Region Navigator</code>.</p>
+<p>Select the duplication (chrX:45649874-45689322) from the <code>Region Navigator</code>.</p>
 </li>
 <li>
-<p>Highlight the abnormal paired-ends by clicking and selecting <code class="codehilite">Color alignments by</code>
-and then switch to <code class="codehilite">insert size and pair orientation</code>.
-Also, invoke <code class="codehilite">Sort alignments by</code> then select <code class="codehilite">start location</code>.</p>
+<p>Highlight the abnormal paired-ends by clicking and selecting <code>Color alignments by</code>
+and then switch to <code>insert size and pair orientation</code>.
+Also, invoke <code>Sort alignments by</code> then select <code>start location</code>.</p>
 </li>
 <li>
 <p>Zoom out until you can see all the purple reads at the junction.</p>
@@ -1435,44 +1513,74 @@ Also, invoke <code class="codehilite">Sort alignments by</code> then select <cod
 <p>What is the direction of the purple cluster of reads (indicates that
 mate reads are mapped to Chr15)? Is it pointing to the tail or head of
 Chr18?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Forward, towards the tail, or 3’ (+ive)</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>Forward, towards the tail, or 3’ (+ive)</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
-<p>Right click on to one of the purple coloured reads and select <code class="codehilite">View mate region in split-screen</code>.
+<p>Right click on to one of the purple coloured reads and select <code>View mate region in split-screen</code>.
 This will split the screen and display Chr15 on the left and place a red
 highlighted outline on both reads, to indicate the pairs. Right click and
-<code class="codehilite">Sort alignments by</code> then select <code class="codehilite">start location</code>.</p>
+<code>Sort alignments by</code> then select <code>start location</code>.</p>
 <p>What is the direction of the yellow cluster of reads (indicates that mate
 reads are mapped to Chr18)? Is it pointing to the tail or head of Chr15?
 If you wish to zoom in or out, first click inside of the chromosome ideogram
 panel, then ctrl- to zoom out and shift+ to zoom in.</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Reverse, towards the head, or 5’ (+ive)</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>Reverse, towards the head, or 5’ (+ive)</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>How is the Chr15 and Chr18 fused (which one of the four translocation
 connection types)? If you are uncertain then run a BLAT (<a href="https://genome.ucsc.edu/cgi-bin/hgBlat?command=start">https://genome.ucsc.edu/cgi-bin/hgBlat?command=start</a>)
-search using the INFO:CONSENSUS sequence (gedit <code class="codehilite">somatic.sv.vcf</code>).</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>RF, head to tail, or 5 to 3. Therefore, Chr18 left side is fused to
-Chr15 right side.</p></details></div>
+search using the INFO:CONSENSUS sequence (gedit <code>somatic.sv.vcf</code>).</p>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>RF, head to tail, or 5 to 3. Therefore, Chr18 left side is fused to
+Chr15 right side.</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>Did DELLY predict a reciprocal translocation? How can you tell?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>No, as we would expect to observe a Chr18 right side fused to Chr15 left
-side, near the same breakpoints.</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>No, as we would expect to observe a Chr18 right side fused to Chr15 left
+side, near the same breakpoints.</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>What gene structures is this translocation predicted to impact?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>PARD6G on Chr15 and ADAMTSL3 on Chr18.</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>PARD6G on Chr15 and ADAMTSL3 on Chr18.</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>What is one possible reason why there is no observable read coverage
 after Chr18 breakpoint?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Chromosome loss.</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>Chromosome loss.</p>
+</details>
+</div>
 </div>
 <h3 id="verify-tandem-duplication">Verify tandem duplication<a class="headerlink" href="#verify-tandem-duplication" title="Permanent link">&para;</a></h3>
 <div class="admonition attention">
@@ -1480,12 +1588,13 @@ after Chr18 breakpoint?</p>
 </div>
 <ul>
 <li>
-<p>Select the tandem duplication (chrX:45649874-45689322) from the <code class="codehilite">RegionNavigator</code>.</p>
+<p>Select the tandem duplication (chrX:45649874-45689322) from the <code>Region
+Navigator</code>.</p>
 </li>
 <li>
-<p>Highlight the abnormal paired-ends by clicking and selecting <code class="codehilite">Color alignments by</code>
-and then switch to <code class="codehilite">insert size and pair orientation</code>.
-Also, invoke <code class="codehilite">Sort alignments by</code> then select <code class="codehilite">start location</code>.</p>
+<p>Highlight the abnormal paired-ends by clicking and selecting <code>Color alignments by</code>
+and then switch to <code>insert size and pair orientation</code>.
+Also, invoke <code>Sort alignments by</code> then select <code>start location</code>.</p>
 </li>
 <li>
 <p>Zoom out until you can see all the red paired-end reads spanning the two
@@ -1498,13 +1607,23 @@ left junction and then right junction.</p>
 <p class="admonition-title">Question</p>
 <p>Which is the order and orientation of these paired-end reads (FR, RF, FF
 or RR)?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>RF</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>RF</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>What is the estimated read-depth ratio of the cancer_cell_line versus
 normal control (INFO:RDRATIO) over the duplicate region?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>3.3 ( 3 x increased read depth)</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>3.3 ( 3 x increased read depth)</p>
+</details>
+</div>
 </div>
 <h3 id="verify-inversion">Verify Inversion<a class="headerlink" href="#verify-inversion" title="Permanent link">&para;</a></h3>
 <div class="admonition attention">
@@ -1515,16 +1634,16 @@ normal control (INFO:RDRATIO) over the duplicate region?</p>
 <p>Type into the search box near at tool bar, Chr20:54834492</p>
 </li>
 <li>
-<p>Right click on main display and select <code class="codehilite">Group alignments by</code> then switch
-on <code class="codehilite">paired-orientation</code>. Also, right click and <code class="codehilite">Sort alignments by</code> then
-select <code class="codehilite">start location</code>.</p>
+<p>Right click on main display and select <code>Group alignments by</code> then switch
+on <code>paired-orientation</code>. Also, right click and <code>Sort alignments by</code> then
+select <code>start location</code>.</p>
 </li>
 <li>
 <p>Zoom out until you can see all the red coloured cluster of reads near
 the breakpoint.</p>
 </li>
 <li>
-<p>Right click on to one of the red coloured reads and select <code class="codehilite">View mate region in split-screen</code>.
+<p>Right click on to one of the red coloured reads and select <code>View mate region in split-screen</code>.
 This will split the screen and display the read mate on the right side.
 This will take you to the mate-reads near the second breakpoint.</p>
 </li>
@@ -1533,102 +1652,77 @@ This will take you to the mate-reads near the second breakpoint.</p>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>Which direction are the paired-end reads spanning (left or right spanning)?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Right</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>Right</p>
+</details>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>What is the estimated size of the inverted interval?</p>
-<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>55,408,660 – 54,834,492 = 574,168 bp</p></details></div>
+<div class="admonition success">
+<details>
+<summary><strong>Answer</strong></summary>
+<p>55,408,660 – 54,834,492 = 574,168 bp</p>
+</details>
+</div>
 </div>
 <hr />
 <h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h2>
 <p>We would like to thank and acknowledge Tobias Rausch (EMBL Heidelberg)
 for his help and for allowing us to borrow and adapt his replies to
 questions and original course material.</p>
+
+
+
+
+
                 
-                  
-                
-              
-              
-                
-              
-            </article>
-          </div>
+              </article>
+            </div>
+          
+          
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../../cancer-module-cnv/cnv-tut/" title="Copy Number Variation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Copy Number Variation
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../cancer-module-viz/visu/" title="Variant Visualisation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Variant Visualisation
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            &copy; The authors; 2017-
-          </div>
-        
-        powered by
-        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
-        and
-        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
-          Material for MkDocs</a>
-      </div>
-      
-        
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; The authors; 2017-
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../../assets/javascripts/application-c35428f87f.js"></script>
-      
-      
-      <script>app.initialize({url:{base:"../../.."}})</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="../../../js/details.js"></script>
-      
-    
-    
       
     
   </body>
